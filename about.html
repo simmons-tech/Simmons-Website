@@ -53,6 +53,22 @@
       to 340 MIT undergraduates, 10 MIT graduate students, 2 MIT
       professors and their families, and 5 Resident Scholars who are
       visiting MIT for the academic year. </p>
+
+    <div id="myCarousel" class="carousel">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+	<div class="item"><img src="img/image1.jpg"></div>
+	<div class="item"><img src="img/image2.jpg"></div>
+	<div class="item"><img src="img/image3.jpg"></div>
+	<div class="item"><img src="img/image4.jpg"></div>
+	<div class="item"><img src="img/image5.jpg"></div>
+	<div class="item"><img src="img/image6.jpg"></div>
+	<div class="item"><img src="img/image7.jpg"></div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
     
   </div>
   <footer>
@@ -75,12 +91,19 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+   <script type="text/javascript">
+      $('.carousel').carousel({
+      interval: 5000
+      })
+    </script>
   <!-- end scripts -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
