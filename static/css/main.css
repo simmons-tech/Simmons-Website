@@ -3989,27 +3989,107 @@ a.thumbnail:hover {
   visibility: hidden;
 }
 
-html {
-	background: url(../img/bg.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+html, body {
+	background: url(../img/bg.jpg) no-repeat fixed;
+	color: white;
 }
 
-.container-fluid {
-    background: none;
-    color: white;
-}
-
-#i3 {
-    text-align: center;
+#video-player {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
+    padding: 30px;
+    width: 800px;
+    background: rgba(255, 255, 255, 0.5);
+     -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#content {
+    width: 960px;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 iframe {
-    background: white;
-    margin: 20px;
-    border: 30px solid white;
+    border: none;
 }
+
+#cpw {
+    /*margin: auto;*/
+    text-align: center;
+    font-size: 18pt;
+    font-style: bold;
+    margin-top: 25px;
+}
+
+#cpw a {
+    color: rgb(54,54,54)
+}
+
+#footer {
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+
+#simmons-logo {
+    position: absolute;
+    left:30px;
+    top:30px;
+}
+
+#mit-logo {
+    float: left;
+}
+
+#mit-logo:hover {
+    opacity: 0.5;
+}
+
+#credit {
+    margin-top: 5px;
+    float: right;
+}
+
+#street-address {
+    position: relative;
+    top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+a {
+    color: white;
+}
+
+
+nav { 
+    display:block; 
+    margin:0 auto 20px; 
+    position: absolute;
+    left:175px;
+    top:170px;
+}  
+nav ul { padding:0; margin:0; }  
+nav li { position:relative; float:left; list-style-type:none; }  
+nav li a { 
+    display:block; 
+    padding:10px 20px; 
+    border-left:4px solid #a5a5a5; 
+    color: #a5a5a5;  
+    text-decoration:none;
+    font-size: 24px;
+	 }  
+nav li a:hover {
+    color: #000;
+    text-decoration:none;
+  }
+nav li:first-child a { border-left:none; }  
+nav li.last a { border-right:none; }  
+
