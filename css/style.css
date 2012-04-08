@@ -246,11 +246,11 @@ html, body {
 }
 
 .container a, .container a:visited, .continaer a:active {
-    color: #a5a5a5;
+    color: #363536;
 }
 
 .container a:hover {
-    color: #a5a5a5;
+    color: #000;
 }
 
 nav { 
@@ -304,7 +304,7 @@ iframe {
 }
 
 #cpw a {
-    color: rgb(54,54,54);
+    color: #363536;
 }
 
 footer {
