@@ -16,11 +16,11 @@
   <meta name="description" content="">
 
   <!-- Mobile viewport optimized: h5bp.com/viewport -->
-  <meta name="viewport" content="width=device-width">
+  <meta name = "viewport" content = "width = 1024">
 
   <!-- Place favicon.ico and apple-touch-icon.png in the root
   directory: mathiasbynens.be/notes/touch-icons -->
-  <link href="favicon.png" rel="icon" type="image/x-icon" />
+<link href="favicon.png" rel="icon" type="image/x-icon" />
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -39,19 +39,24 @@
     <h1>
       <a href="index.html"><img id="simmons-logo" src="img/logo.png" alt="Simmons Hall" title="Simmons Hall"></img></a>
     </h1>
-      <nav>
-	<ul>
-	  <li><a href="about.html">About</a></li>
-	  <li><a href="prospectives.html">Prospectives</a></li>
-	  <li><a href="visitors.html">Visitors</a></li>
-	  <li><a href="sds">Residents</a></li>
-	</ul>
-      </nav>
+    <nav>
+      <ul>
+	<li><a href="about.html">About</a></li>
+	<li><a href="prospectives.html">Prospectives</a></li>
+	<li><a href="visitors.html">Visitors</a></li>
+	<li><a href="sds">Residents</a></li>
+      </ul>
+    </nav>
   </header>
   <div role="main" id="content" class="container">
     <h1>Welcome Prospectives</h1>
 
-<p class="larger">Simmons Hall is an MIT dormitory that is home to 340 awesome undergraduates. It’s a phenomenal place to call home during your time at the Institute, and we can’t wait to show you why during CPW.</p>
+<p class="larger">Simmons Hall is an MIT dormitory that is home to 340
+awesome undergraduates. It’s a phenomenal place to call home during
+your time at the Institute, and we can’t wait to show you why during
+CPW.</p>
+
+<h2>CPW Event Schedule</h2>
 <table>
   <thead>
     <tr>
@@ -157,10 +162,9 @@
 
     
   </div>
-  <footer>
-    <a href="http://mit.edu"><img id="mit-logo" src="img/mitWhite.gif"
-    alt="MIT Logo"></img></a>
-    <span id="credit">Designed by Simmons Tech</span>
+ <footer>
+    <a href="http://mit.edu"><img id="mit-logo" src="img/mitWhite.gif"></img></a>
+    <span id="credit">Designed by Simmons Tech<br />&copy; 2012 Simmons Hall</span>
     <div  id="street-address" class="adr">
       <address class="vcard">
 	<a href="http://maps.google.com/maps?q=Simmons+Hall,+MIT&hl=en&sll=37.0625,-95.677068&sspn=62.74193,129.550781&oq=simmons+hall,+massa&t=v&hnear=Simmons+Hall,+Mid-Cambridge,+Massachusetts+02139&z=17&iwloc=A">
@@ -183,12 +187,13 @@
   <!-- scripts concatenated and minified via build script -->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/bootstrap.js"></script>
   <!-- end scripts -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    var _gaq=[['_setAccount','UA-29172658-1'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));

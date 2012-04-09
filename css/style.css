@@ -19,6 +19,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
+iframe { border: none; }
 
 
 /* =============================================================================
@@ -104,7 +105,41 @@ sub { bottom: -0.25em; }
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+/* =============================================================================
+   Nav
+   ========================================================================== */
+
+nav { 
+    display:block; 
+    margin:0 auto 20px; 
+    position: absolute;
+    left:177px;
+    top:170px;
+    width: 100%;
+}  
+
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0 auto;
+		 padding: 0; }
+
+
+nav ul li {
+    float: left;
+}  
+nav ul li a, nav ul li a:visited {
+    display:block; 
+    padding:10px 20px; 
+    border-left:4px solid #a5a5a5; 
+    color: #a5a5a5;  
+    text-decoration:none;
+    font-size: 24px;
+}  
+nav ul li a:hover {
+    color: #000;
+  }
+
+nav ul li:first-child a { border-left:none; }  
+nav ul li.last a { border-right:none; }
 
 
 /* =============================================================================
@@ -231,11 +266,11 @@ html, body {
 #content {
     margin-top: 300px;
     margin-bottom: 100px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .container {
+    margin-left: auto;
+    margin-right: auto;
     width: 960px;
     padding: 30px;
     background: rgba(255, 255, 255, 0.9);
@@ -245,8 +280,8 @@ html, body {
     border-radius: 10px;
 }
 
-.container a, .container a:visited, .continaer a:active {
-    color: #363536;
+.container a, .container a:visited, .continaer a:active, .showcase a, .showcase a:visited, .showcase a:active {
+    color: #1DABDC;
 }
 
 .container a:hover {
@@ -256,45 +291,13 @@ html, body {
 .showcase {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding: 30px;
     width: 800px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.9);
      -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     -khtml-border-radius: 10px;
     border-radius: 10px;
-}
-
-nav { 
-    display:block; 
-    margin:0 auto 20px; 
-    position: absolute;
-    left:177px;
-    top:170px;
-}  
-nav ul { padding:0; margin:0; }  
-nav li { position:relative; float:left; list-style-type:none; }  
-nav li a, nav li a:visited { 
-    display:block; 
-    padding:10px 20px; 
-    border-left:4px solid #a5a5a5; 
-    color: #a5a5a5;  
-    text-decoration:none;
-    font-size: 24px;
-	 }  
-nav li a:hover {
-    color: #000;
-    text-decoration:none;
-  }
-
-nav li:first-child a { border-left:none; }  
-nav li.last a { border-right:none; }  
-
-
-iframe {
-    border: none;
 }
 
 #cpw {
@@ -312,7 +315,6 @@ iframe {
 footer {
     margin: auto;
     width: 800px;
-    text-align: center;
 }
 
 #simmons-logo {
@@ -332,10 +334,11 @@ footer {
 #credit {
     float: right;
     color: #fff;
+    text-align: right;
 }
 
-#street-address a{
-    margin-left: 100px;
+#street-address a {
+    margin-left: 180px; /*hack to center*/
 }
 
 
@@ -458,6 +461,12 @@ td, th {
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
+
+.carousel a, .carousel a:visited, .carousel a:active {
+    color: #a5a5a5;
+}
+
+
 .carousel-caption {
   position: absolute;
   left: 0;
@@ -476,13 +485,9 @@ td, th {
     position: static;
 }
 
-
-
-
-
-
-
-
+a.normal-color {
+    color: #222;
+}
 
 
 
