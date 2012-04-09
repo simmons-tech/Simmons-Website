@@ -59,6 +59,10 @@ a:focus { outline: none; }
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active { outline: 0; }
 
+a.normal-color {
+    color: #222;
+}
+
 
 /* =============================================================================
    Typography
@@ -134,11 +138,15 @@ nav ul li a, nav ul li a:visited {
     font-size: 24px;
 }  
 nav ul li a:hover {
-    color: #000;
+    color: #222;
   }
 
 nav ul li:first-child a { border-left:none; }  
 nav ul li.last a { border-right:none; }
+
+nav ul li.active a {
+    color: #222;
+}
 
 
 /* =============================================================================
@@ -311,6 +319,38 @@ img.bg {
     border-radius: 10px;
 }
 
+#simmons-logo {
+    position: absolute;
+    left:30px;
+    top:30px;
+}
+
+footer {
+    position: relative;
+    margin: auto;
+    width: 800px;
+    text-align: center;
+}
+
+
+#mit-logo {
+    position: absolute;
+    left:0px;
+    top: 0px;
+}
+
+#mit-logo:hover {
+    opacity: 0.5;
+}
+
+#credit {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    text-align: right;
+}
+
 #cpw {
     text-align: center;
     margin-top: 25px;
@@ -326,37 +366,6 @@ img.bg {
 #cpw a:hover {
     text-decoration: none;
 }
-
-footer {
-    position: relative;
-    margin: auto;
-    width: 800px;
-}
-
-#simmons-logo {
-    position: absolute;
-    left:30px;
-    top:30px;
-}
-
-#mit-logo {
-    float: left;
-}
-
-#mit-logo:hover {
-    opacity: 0.5;
-}
-
-#credit {
-    float: right;
-    color: #fff;
-    text-align: right;
-}
-
-#street-address a {
-    margin-left: 180px; /*hack to center*/
-}
-
 
 table {
     width: 960px;
@@ -501,9 +510,6 @@ td, th {
     position: static;
 }
 
-a.normal-color {
-    color: #222;
-}
 
 
 
