@@ -312,6 +312,10 @@ html, body {
     text-decoration: underline;
 }
 
+#cpw a:hover {
+    text-decoration: none;
+}
+
 footer {
     margin: auto;
     width: 800px;
