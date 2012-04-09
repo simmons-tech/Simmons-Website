@@ -116,7 +116,6 @@ nav {
     position: absolute;
     left:177px;
     top:170px;
-    width: 100%;
 }  
 
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0 auto;
