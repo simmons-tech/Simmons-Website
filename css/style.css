@@ -260,7 +260,7 @@ td { vertical-align: top; }
  
 
 html, body {
-	background: url(../img/bg.jpg) no-repeat fixed;
+    background: #555 url(../img/bg.jpg) no-repeat fixed;
 }
 
 #content {
