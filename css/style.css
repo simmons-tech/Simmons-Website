@@ -328,6 +328,7 @@ img.bg {
 }
 
 footer {
+    position: relative;
     margin: auto;
     width: 800px;
 }
