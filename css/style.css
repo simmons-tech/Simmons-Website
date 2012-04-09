@@ -351,9 +351,10 @@ table {
     table-layout: fixed;
 }
 
-tbody tr:nth-child(odd) {
-   background-color: #a5a5a5;
-}
+/* Zebra Stripe the table */
+table tr:nth-child(odd){background-color:rgba(255,255,255,0.7);}
+table tr:nth-child(even){background-color:rgba(180,180,180,0.6);}
+
 
 td, th {
     padding: 10px;
@@ -362,7 +363,6 @@ td, th {
 .date {
     width: 90px;
 }
-
 .time {
     width: 90px;
 }
