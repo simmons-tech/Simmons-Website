@@ -390,14 +390,14 @@ td, th {
 }
 
 .date {
-    width: 90px;
+    width: 100px;
 }
 .time {
-    width: 90px;
+    width: 110px;
 }
 
 .event {
-    width: 150px;
+    width: 180px;
 }
 
 .carousel {
