@@ -510,8 +510,13 @@ td, th {
 
 .fb-like-box {
     float: right;
-    margin-top: 30px;
+    margin-top: 10px;
     padding-left: 20px;
+}
+
+#cpw_image {
+    position: relative;
+    top: -21px;
 }
 
 
