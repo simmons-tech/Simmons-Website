@@ -93,7 +93,7 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
 
-small { font-size: 14px; font-size: 1.4rem;}
+small { font-size: 12px; font-size: 1.2rem;}
 
 /* Position subscript and superscript content without affecting line-height: h5bp.com/k */
 sub, sup { font-size: 12px; font-size: 1.2rem; line-height: 0; position: relative; vertical-align: baseline; }
