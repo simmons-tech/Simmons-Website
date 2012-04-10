@@ -264,11 +264,14 @@ td { vertical-align: top; }
    Author: Simmons Tech
    ========================================================================== */
 
+html {
+    background: #555;
+}
 
 img.bg {
 	/* Set rules to fill background */
 	min-height: 100%;
-	min-width: 2000px;
+	min-width: 1680px;
 
 	/* Set up proportionate scaling */
 	width: 100%;
@@ -516,7 +519,7 @@ td, th {
 
 #cpw_image {
     position: relative;
-    top: -21px;
+    top: -25px;
 }
 
 #intro-prospectives {
