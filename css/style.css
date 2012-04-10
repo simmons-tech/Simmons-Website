@@ -31,11 +31,11 @@ iframe { border: none; }
  * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
  */
 
-html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 62.5%; -webkit-text-size-adjust: font-size: 62.5%; -ms-text-size-adjust: font-size: 62.5%; }
 
 html, button, input, select, textarea {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; color: #222; }
 
-body { margin: 0; font-size: 1em; line-height: 1.4; }
+body { margin: 0; font-size: 16px; font-size: 1.6rem; line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -72,7 +72,7 @@ abbr[title] { border-bottom: 1px dotted; }
 
 b, strong { font-weight: bold; }
 
-blockquote { margin: 1em 40px; }
+blockquote { margin: 1.4rem 40px; }
 
 dfn { font-style: italic; }
 
@@ -83,7 +83,9 @@ ins { background: #ff9; color: #000; text-decoration: none; }
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
 
 /* Redeclare monospace font family: h5bp.com/j */
-pre, code, kbd, samp {font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; font-size: 1em; }
+pre, code, kbd, samp {font-family: "HelveticaNeue-Light", "Helvetica
+Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+		      sans-serif; font-weight: 300; font-size: 14px; font-size: 1.4rem; }
 
 /* Improve readability of pre-formatted text in all browsers */
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
@@ -91,15 +93,15 @@ pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
 
-small { font-size: 85%; }
+small { font-size: 14px; font-size: 1.4rem;}
 
 /* Position subscript and superscript content without affecting line-height: h5bp.com/k */
-sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sub, sup { font-size: 12px; font-size: 1.2rem; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
 .larger {
-    font-size: 18pt;
+    font-size: 24px; font-size: 2.4rem;
 }
 
 
@@ -107,7 +109,7 @@ sub { bottom: -0.25em; }
    Lists
    ========================================================================== */
 
-ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul, ol { margin: 16px 0; margin: 1.6rem 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 
 /* =============================================================================
@@ -120,6 +122,7 @@ nav {
     position: absolute;
     left:177px;
     top:170px;
+    white-space: nowrap;
 }  
 
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0 auto;
@@ -136,6 +139,7 @@ nav ul li a, nav ul li a:visited {
     color: #a5a5a5;  
     text-decoration:none;
     font-size: 24px;
+    font-size: 2.4rem;
 }  
 nav ul li a:hover {
     color: #222;
@@ -271,7 +275,7 @@ html {
 img.bg {
 	/* Set rules to fill background */
 	min-height: 100%;
-	min-width: 1680px;
+	min-width: 1113px; 
 
 	/* Set up proportionate scaling */
 	width: 100%;
