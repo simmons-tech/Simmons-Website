@@ -269,7 +269,7 @@ td { vertical-align: top; }
    ========================================================================== */
 
 html {
-    background: #555;
+    background: #888888;
 }
 
 img.bg {
@@ -311,7 +311,7 @@ img.bg {
 }
 
 .container a:hover {
-    color: #000;
+    color: #222;
 }
 
 .showcase {
