@@ -409,8 +409,9 @@ td, th {
 
 .carousel-inner {
   overflow: hidden;
-  width: 100%;
+  width: 800px;
   position: relative;
+  margin: auto;
 }
 .carousel .item {
   display: none;
