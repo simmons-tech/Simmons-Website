@@ -1,0 +1,544 @@
+body {
+  color: #001133;
+  background-color: #FFFFFF;
+  margin-top: 0px;
+  margin-left: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+h1 {
+  font-size: x-large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #006633;
+} 
+
+h2 {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #006633;
+} 
+
+ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+a:link,
+a:visited {
+  color: #CC3300;
+  text-decoration: none;
+}
+a:hover {
+  color: #CC3300;
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+.success {
+  color: green;
+  font-weight: bold;
+}
+.alert {
+  color: red;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.pagebody {
+  margin: 1em 2em;
+}
+.footer {
+  clear: left;
+  padding: 1em 2em;
+  font-size: small;
+}
+
+/* old nav system */
+table.navbar {
+  background: #DDDDDD;
+  padding: 6px 6px;
+  border: solid 1px black;
+}
+table.navbar td {
+  font-size: small;
+  white-space: nowrap;
+  padding-left: 10px
+}
+table.navbar td.navbarGroup {
+  border-top: solid 1px black;
+  font-weight: bold;
+  color: #006633;
+}
+
+/* new nav system */
+ul.navbar {
+  background: #dddddd;
+  padding: 6px;
+  border: solid 1px black;
+  margin: 0 10px;
+  list-style-type: none;
+}
+ul.navbar li {
+  font-size: small;
+  white-space: nowrap;
+}
+ul.navbar > li {
+  border-top: solid 1px black;
+  font-weight: bold;
+  color: #006633;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+ul.navbar > li > ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+ul.navbar > li > ul > li {
+  font-weight: normal;
+}
+
+
+
+table.movielist {
+  border-collapse: collapse;
+  width: 100%;
+  white-space: nowrap;
+}
+table.movielist caption {
+  caption-side: top;
+  font-weight: bold;
+  font-size: larger;
+}
+table.movielist td,
+table.movielist th {
+  padding: 0 .5em;
+  text-align: center;
+}
+table.movielist td.titlecell {
+  white-space: normal;
+  text-align: left;
+}
+table.movielist td.statuscell {
+  text-align: left;
+  padding-left: 0px;
+}
+table.movielist tr.evenrow {
+  background-color: #DDDDFF;
+}
+table.movielist tr.oddrow {
+  background-color: #FFFFFF;
+}
+table.movielist tr.overdue {
+  background-color: #FFDDDD;
+}
+table.movielist tr.hidden td {
+  color: #666666;
+}
+
+table.packagetable th {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+table.packagetable td {
+  text-align: center;
+}
+table.packagetable form {
+  display: inline;
+}
+
+table.optionstable td.name {
+  padding-left: 3em;
+  text-indent: -3em;
+}
+
+table.maillist tr.evenrow {
+  background: #efefef;
+  border: #efefef;
+}
+table.maillist tr.oddrow {
+  background: #ffffff;
+  border: #ffffff;
+}
+
+table.directory {
+  empty-cells: show;
+  border-style: outset;
+  border-width: 1px;
+  border-color: silver;
+}
+table.directory tr.oddrow {
+  background: #ffdddd;
+}
+table.directory tr.evenrow {
+  background: #ffeeee;
+}
+table.directory td,
+table.directory th {
+  border-style: inset;
+  border-width: 1px;
+  border-color: silver;
+}
+
+table.pollcreate td {
+  vertical-align: top;
+}
+table.pollcreate td.label {
+  white-space: nowrap;
+}
+
+table.openpolls th {
+  background-color: white;
+}
+table.openpolls td {
+  background-color: #ffbbbb;
+}
+table.openpolls td.description {
+  background-color: #ffdddd;
+}
+table.closedpolls th {
+  background-color: white;
+}
+table.closedpolls td {
+  background-color: #bbbbbb;
+}
+table.closedpolls td.description {
+  background-color: #dddddd;
+}
+table.openpolls a,
+table.closedpolls a {
+  white-space: nowrap;
+}
+
+table.pollresults td {
+  background-color: #ffbbbb;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+table.pollresults td.visual {
+  background-color: transparent;
+  padding-left: 0;
+}
+p.polldescription {
+  font-style: italic;
+}
+
+.money:before {
+  content: '$';
+}
+.money {
+  text-align: right;
+}
+.money.pos {
+  color: green;
+}
+.money.neg {
+  color: red;
+}
+
+.number {
+  text-align: right;
+}
+
+a.govaction {
+  white-space: nowrap;
+}
+a.govaction + a.govaction {
+  padding-left: 4px;
+  border-left: solid thin black;
+}
+
+table.proposallist td {
+  vertical-align: top;
+}
+table.proposallist tr.evenrow,
+table.loungeinfo tr.evenrow {
+  background-color: #dddddd;
+}
+table.proposallist tr.oddrow,
+table.loungeinfo tr.oddrow {
+  background-color: #eeeeee;
+}
+table.proposallist th,
+table.loungeinfo th {
+  padding: 0 .5em;
+  vertical-align: bottom;
+}
+table.loungeinfo td.membership {
+  text-align: right;
+}
+table.proposallist a.proptitle {
+  display: block;
+  font-style: italic;
+  font-weight: bold;
+}
+table.proposallist a.admin {
+  font-size: small;
+}
+table.proposallist a.admin + a.admin {
+  padding-left: 4px;
+  border-left: solid thin black;
+}
+table.proposallist tr.deleted {
+  color: #666666;
+}
+table.proposallist cite {
+  display: block;
+}
+table.proposallist cite:before {
+  content: "-- ";
+}
+
+table.proposaldetail {
+  border-collapse: collapse;
+  border-width: thin;
+  border-style: solid;
+}
+table.proposaldetail td {
+  border-width: thin;
+  border-style: solid none;
+}
+table.proposaldetail .inputdetail {
+  font-style: italic;
+  font-size: small;
+}
+
+table.racadd td.label {
+  text-align: right;
+}
+table.racadd td.label:after {
+  content: ":";
+}
+
+table.batchupdate th {
+  font-weight: normal;
+  font-style: italic;
+  text-align: left;
+}
+
+table.rooming {
+  border: outset 3px;
+  empty-cells: show;
+}
+table.rooming td,
+table.rooming th {
+  text-align: center;
+  border: inset 1px;
+  padding: 3px;
+}
+table.rooming .room,
+table.rooming .name {
+  text-align: left;
+}
+table.rooming > caption {
+  font-weight: bold;
+  font-size: larger;
+  color: #006633;
+  white-space: nowrap;
+  margin-top: 3ex;
+}
+
+table.about td {
+  vertical-align: top;
+}
+table.about .title {
+  font-weight: bold;
+}
+table.about ul.names {
+  white-space: nowrap;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+table.printeruse {
+  border-collapse: collapse;
+}
+table.printeruse th,
+table.printeruse td {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+table.printeruse td {
+  text-align: right;
+}
+table.printeruse .evenrow {
+  background-color: #bbbbbb;
+}
+table.printeruse .oddrow {
+  background-color: #dddddd;
+}
+
+table.grttable td {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+table.grttable tr.evenrow {
+  background-color: #bbbbbb;
+}
+table.grttable tr.oddrow {
+  background-color: #dddddd;
+}
+table.grttable tr.evenrow.mysection {
+  background-color: #ffbbbb;
+}
+table.grttable tr.oddrow.mysection {
+  background-color: #ffdddd;
+}
+
+div.dragregion {
+  padding: 40px;
+}
+div.dragregion div.dragitem {
+  border: solid black thin;
+  background-color: #dddddd;
+}
+div.dragregion div.posIndicator {
+  visibility: hidden;
+  border: solid thin black;
+}
+div.dragtemplate {
+  display: none;
+}
+
+
+table.wiki-perms {
+  border-collapse: collapse;
+}
+table.wiki-perms th,
+table.wiki-perms td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+}
+table.wiki-perms th {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+table.wiki-perms td.prefix {
+  text-align: left;
+}
+
+.detail {
+  font-size: smaller;
+  font-weight: normal;
+}
+
+/* GovTracker Financial Styles */
+
+table.fin-total {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
+table.fin-total td {
+  font-size: large;
+  font-weight: bold;
+}
+table.fin-total .money {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+table.fin-acct-total {
+  padding-bottom: 20px;
+}
+table.fin-acct-total td {
+  font-size: medium;
+  font-weight: bold;
+}
+table.fin-acct-total .money {
+  font-family: monospace;
+  font-size: large;
+}
+
+ul.fin-account-list {
+  padding: 0;
+  text-align: center;
+}
+ul.fin-account-list > li {
+  display: inline;
+}
+ul.fin-account-list > li:before {
+  content: '[';
+}
+ul.fin-account-list > li:after {
+  content: ']';
+}
+ul.fin-account-list > li.current {
+  font-weight: bold;
+}
+
+.fin-link {
+  font-size: small !important;
+}
+.fin-link:before {
+  content: '[';
+}
+.fin-link:after {
+  content: ']';
+}
+
+table.fin-ledger {
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: gray;
+  border-style: dotted;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+table.fin-ledger tr.evenrow {
+  background-color: #eeeeee;
+}
+table.fin-ledger tr.oddrow {
+  background-color: #fefefe;
+}
+table.fin-ledger tr.void td {
+  text-decoration: line-through;
+}
+table.fin-ledger th,
+table.fin-ledger td {
+  border-width: 1px;
+  border-style: dotted;
+  border-color: gray;
+  padding: 1px;
+  vertical-align: top;
+}
+table.fin-ledger .money {
+  font-family: monospace;
+  font-weight: bold;
+}
+table.fin-ledger td.older {
+  text-align: center;
+  font-style: italic;
+}
+table.fin-ledger td.transtotal {
+  text-align: right;
+  font-weight: bold;
+}
+
+table.fin-ledger.grid td {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+table.fin-create {
+  border-collapse: collapse;
+  border-width: thin;
+  border-style: solid;
+}
+table.fin-create td {
+  border-width: thin;
+  border-style: solid none;
+}
+
+span#fin-sub-descr > span {
+  display: none;
+}

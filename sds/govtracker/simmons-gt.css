@@ -1,0 +1,72 @@
+@import "/simmons.css";
+
+body {
+  font-size: large;
+}
+
+input[type="submit"] {
+  font-size: large;
+}
+textarea,
+input[type="text"] {
+  color: #001133;
+  background-color: #FFFFFF;
+  margin-top: 0px;
+  margin-left: 0px;
+  font-size: x-large;
+}
+
+h1 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+h2 {
+  font-size: x-large;
+  color: black;
+  text-align: center;
+}
+
+h3 {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: black;
+  text-align: center;
+}
+
+.pagebody {
+  margin: 0.25em;
+}
+
+ul.navbar {
+  margin: 10px;
+}
+ul.navbar li {
+  white-space: normal;
+}
+ul.navbar > li > ul > li {
+  margin-left: 1em;
+  text-indent: -1em;
+}
+
+form {
+  display: inline;
+}
+
+
+table.fin-total td {
+  font-size: x-large;
+}
+table.fin-total td.money {
+  font-size: xx-large;
+}
+
+table.fin-ledger {
+  margin-left: auto;
+  margin-right: auto;
+}
+table.fin-ledger td.money {
+  font-size: x-large;
+}
