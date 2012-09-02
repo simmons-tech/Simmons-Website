@@ -120,8 +120,8 @@ nav {
     display:block; 
     margin:0 auto 20px; 
     position: absolute;
-    left:177px;
-    top:170px;
+    left:130px;
+    top:140px;
     white-space: nowrap;
 }  
 
@@ -135,11 +135,11 @@ nav ul li {
 nav ul li a, nav ul li a:visited {
     display:block; 
     padding:10px 20px; 
-    border-left:4px solid #a5a5a5; 
+    border-left:2px solid #a5a5a5; 
     color: #a5a5a5;  
     text-decoration:none;
     font-size: 24px;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
 }  
 nav ul li a:hover {
     color: #222;
@@ -328,6 +328,8 @@ img.bg {
     position: absolute;
     left:30px;
     top:30px;
+    width: 550px;
+    height: 147px;
 }
 
 footer {
