@@ -46,10 +46,10 @@ if(empty($sdsToURL)) {
   if(!empty($_REQUEST['url'])) {
     $sdsToURL = maybeStripslashes($_REQUEST["url"]);
     // Microsoft-reported security problem:
-    $stsToURL = htmlspecialchars($sdsToURL);
+    $sdsToURL = htmlspecialchars($sdsToURL);
   } else {
     $sdsToURL = SDS_HOME_URL;
-	}
+  }
 }
 
 $sdsToArgs = '';
