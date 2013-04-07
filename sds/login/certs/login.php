@@ -45,6 +45,8 @@ require_once("../../sds.php");
 if(empty($sdsToURL)) {
   if(!empty($_REQUEST['url'])) {
     $sdsToURL = maybeStripslashes($_REQUEST["url"]);
+    // Microsoft-reported security problem:
+    $sdsToURL = htmlspecialchars($sdsToURL);
   } else {
     $sdsToURL = SDS_HOME_URL;
   }
