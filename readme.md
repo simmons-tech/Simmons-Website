@@ -42,7 +42,7 @@ Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boi
 * Twitter: http://twitter.com/h5bp
 
 
-## License
+## License and Warranty
 
 ### Major components:
 
@@ -50,6 +50,10 @@ Anyone and everyone is welcome to [contribute](https://github.com/h5bp/html5-boi
 * Modernizr: MIT/BSD license
 * Normalize.css: Public Domain
 
-### Everything else:
+### License and Warranty for Original Code
 
-The Unlicense (aka: public domain)
+Copyright 2013 Simmons Hall
+
+Licensed under CC-BY-SA (the "License"). You may not use this work except in compliance with the License. You may obtain a copy of the License at http://creativecommons.org/licenses/by-sa/2.0/legalcode.
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
