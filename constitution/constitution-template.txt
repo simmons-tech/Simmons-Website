@@ -1,3 +1,5 @@
+<!-- DO NOT EDIT constitution.html DIRECTLY. Instead, edit constitution/constitution-template.txt. More details in constitution/README -->
+
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -51,8 +53,9 @@
     </nav>
   </header>
   <div role="main" id="content" class="container">
-	<h1>Simmons Constitution</h1>
-      <iframe src="constitution-raw.html" id="constitution" style="border: 0" height="7260" width="965" frameborder="0" scrolling="no"></iframe>    
+	  <div id="constitution" width="965" frameborder="0">
+<%include file="constitution-raw.txt"/>
+          </div>
   </div>
   <footer>
     <a href="http://mit.edu"><img id="mit-logo" alt="MIT Logo"
@@ -82,7 +85,7 @@
   <script src="js/script.js"></script>
   <script src="js/bootstrap.js"></script>
   <!-- end scripts -->
-
+  
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
