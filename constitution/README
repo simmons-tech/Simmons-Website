@@ -1,0 +1,9 @@
+The contents of this folder generates an outward-facing constitution.html. Every midnight, a cronjob pulls the constitution from the constitution github repo and refreshes constitution.html.
+
+constitution-template.txt: contains the mako template for constitution.html without the actual constitution text
+
+constitution-raw.txt: the contents of the constitution as per last midnight. Reflects raw.github.com/simmons-tech/constitution/master/constitution.html
+
+template-converter.py: uses mako code to insert constitution-raw.txt into constitution.template.txt
+
+update-cron: a script that inserts the cronjob into your crontab. Makes sure cronjob only appears once in the crontab.

@@ -1,0 +1,10 @@
+#!/bin/bash
+wget -O constitution-raw.txt https://raw.github.com/simmons-tech/constitution/master/constitution.html
+(    crontab -l | sed "/#### BEGIN CONSTITUTION-UPDATE BLOCk/,/#### END CONSTITUTION-UPDATE BLOCK/d"
+    DIR=`pwd`
+    cat <<EOF
+#### BEGIN CONSTITUTION-UPDATE BLOCk
+0 0 * * *    cd $DIR && python template-converter.py > ../constitution.html
+#### END CONSTITUTION-UPDATE BLOCK
+EOF
+) | crontab -
