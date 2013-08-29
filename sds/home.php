@@ -16,9 +16,8 @@ sdsIncludeHeader("Simmons DB", "Welcome to the Simmons DB");
 
 <p>
   <b>Important note:</b> If you're unfamiliar with the new GovTracker system
-  for managaing the house's and lounges' proposals and finances, please read
-  the <a href="http://simmons.mit.edu/govtracker-manual.htm"
-         target="_blank">GovTracker help</a> before submitting anything.  In
+  for managaing the house's and lounges' proposals and finances, please ask an
+  officer or upperclassmen before submitting anything.  In
   general, submitting data to any GovTracker system cannot be undone.
 </p>
 

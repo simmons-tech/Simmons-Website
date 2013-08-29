@@ -113,8 +113,8 @@ ENDQUERY;
 <p>Please choose the lounge social group from the list below that you would
   like to join. You may only choose one group. You might want to take a look at
   the details laid out in the
-  <a href="http://simmons.mit.edu/residents/archives/lounge.html">lounge
-  bylaws</a> before you sign up.</p>
+  <a href="http://simmons.mit.edu/loungebylaws.html">lounge
+  bylaws</a> before you sign up. More information about lounge signups will be provided during the first month of school.</p>
 
 <form action="loungesignup.php" method="post">
 <?php echo sdsForm() ?>
