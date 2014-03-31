@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html --> 
 <meta name="src" content="constitution.tex"> 
-<meta name="date" content="2014-03-09 14:49:00"> 
+<meta name="date" content="2014-03-30 21:57:00"> 
 <link rel="stylesheet" type="text/css" href="constitution.css"> 
 </head><body 
 >
@@ -18,7 +18,7 @@
 <h2 class="titleHead">The Constitution of Simmons Hall</h2>
 <div class="author" ></div><br />
 <div class="date" ><span 
-class="cmr-12">March 9, 2014</span></div>
+class="cmr-12">March 30, 2014</span></div>
 </div>
 <ol  class="enumerate1" >
 <li 
@@ -152,8 +152,9 @@ the will of the House.
 <ol  class="enumerate3" >
 <li 
   class="enumerate" id="x1-41x1">All official business of the House is discussed at meetings that are open and announced to all
-members of the House and occur at least once within every two-week period. House Officer
-meetings shall be held at least a half an hour before general House meetings.
+members of the House and occur at least once within every two-week period during spring
+and fall semesters that MIT classes are in session. House Officer meetings shall be held at
+least a half an hour before general House meetings.
 </li>
 <li 
   class="enumerate" id="x1-43x2">Any House member may propose an item to be discussed or decided upon by the House by
@@ -192,9 +193,9 @@ proposal, a motion to white-ballot can be used. When a motion to white-ballot is
 the House chair should ask those assembled if any are opposed. If any member of the House
 present is opposed, then the motion fails and the House returns to Debate. Once a motion to
 white-ballot fails for a particular measure, no further motions to white-ballot may be raised
+
 for that measure. A motion to white-ballot may not be used to approve a constitutional
 amendment.
-
 </li>
 <li 
   class="enumerate" id="x1-55x8">A motion to force-vote may be used to counter the case when a vote cannot be held due
@@ -254,9 +255,9 @@ upcoming House meeting; (d) creating and distributing the agenda for each House 
 at least one day prior to the start of that meeting; (e) facilitating and maintaining order at
 all meetings of the House, following an established set of procedures and conducting meetings
 in a fair way that allows all members an opportunity to speak; (f) conducting elections;
+
 (g) generally overseeing the business of the House and directly overseeing the Social Chair,
 Facilities Chair, Technology Chair and the Rooming Chairs.
-
 </li>
 <li 
   class="enumerate" id="x1-73x3">The President is the chief diplomat of Simmons Hall and the administrator of the House&#8217;s
@@ -314,9 +315,9 @@ Chair and Secretary until the time of the next regular election.
 <ol  class="enumerate3" >
 <li 
   class="enumerate" id="x1-87x1">A committee is a group of House members who collectively focus on particular sets of issues
+
 of importance to Simmons Hall. Committees may be established on a Standing or Ad-Hoc
 basis.
-
 </li>
 <li 
   class="enumerate" id="x1-89x2">An Ad-Hoc Committee for any purpose may be convened by the President or by virtue of a
@@ -378,10 +379,10 @@ Committee decisions are reported to the House by the Committee Chair. If any mem
 committee disputes a decision reported by the Committee Chair, the Chair of the House may
 call a vote of the committee membership.
 </li></ol>
+
 </li>
 <li 
   class="enumerate" id="x1-111x3">Role and Responsibilities of the Social Chair
-
 <ol  class="enumerate3" >
 <li 
   class="enumerate" id="x1-113x1">The Social Chair leads the Social Committee comprised of all lounge representatives.
@@ -445,10 +446,10 @@ organizing training sessions for residents who want to use the lab (b) ensuring 
 are properly trained and certified to use the lab (c) reporting to the Facilities Chair; (d)
 reporting regularly to the House.
 </li></ol>
+
 </li>
 <li 
   class="enumerate" id="x1-141x7">Role and Responsibilities of the Library Chair
-
 <ol  class="enumerate3" >
 <li 
   class="enumerate" id="x1-143x1">The Library Chair is part of the Facilities Committee and supervises the library on the second
