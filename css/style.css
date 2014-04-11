@@ -383,7 +383,7 @@ table {
 }
 
 /* Zebra Stripe the table */
-table tr:nth-child(odd){background-color:rgba(255,255,255,0.7);}
+table tr:nth-child(odd){background-color:rgba(245,245,245,0.7);}
 table tr:nth-child(even){background-color:rgba(180,180,180,0.6);}
 
 
@@ -400,6 +400,7 @@ td, th {
 
 .event {
     width: 180px;
+    font-weight:bold;
 }
 
 .carousel {
