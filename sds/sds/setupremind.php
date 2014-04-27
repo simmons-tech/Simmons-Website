@@ -28,7 +28,7 @@ if($session->username !== "GUEST") {
   if(isset($lounge)) {
     $query = <<<ENDQUERY
 SELECT count(*) FROM lounge_expenses
-WHERE loungeid='$lounge_esc' AND termsold=0 AND NOT canceled AND
+WHERE loungeid='$lounge_esc' AND termsold=0 AND NOT canceled AND NOT valid AND
       NOT EXISTS
         (SELECT 1 FROM lounge_expense_actions
          WHERE lounge_expense_actions.expenseid=lounge_expenses.expenseid AND
