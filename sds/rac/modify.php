@@ -123,7 +123,7 @@ foreach($userinfo as $key => $val) {
   <tr>
     <td class="label">Lastname</td>
     <td><input type="text" name="lastname" size="12"
-               value="<? echo $userinfo_disp['lastname'] ?>" /></td>
+               value="<?php echo $userinfo_disp['lastname'] ?>" /></td>
   </tr>
   <tr>
     <td class="label">Year</td>
