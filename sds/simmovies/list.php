@@ -76,6 +76,9 @@ if(pg_num_rows($result) > 1 or $showhidden) {
     echo "<input type='hidden' name='showall' value='1' />\n";
   }
   echo sdsForm();
+  
+  echo "  <p>Contact the entertainment chairs at <a href='mailto:simmons-entertainment@mit.edu'>simmons-entertainment@mit.edu</a> with any questions or errors with the listing.</p>";
+  
   echo "  <label>Item type:\n";
   echo "    <select name='type' onchange='itemtype.submit();'>\n";
   while($iteminfo = pg_fetch_array($result)) {
