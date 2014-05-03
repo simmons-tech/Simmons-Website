@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <title>In The Sponge</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="facebox/facebox.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="facebox/facebox.css">
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+var descriptions = {
+  1  : "John Essigmann is an MIT Professor of Chemistry, Toxicology, and Biological Engineering. He is also a total badass. He and his wife Ellen (see below) are the Housemasters of Simmons Hall.",
+  2  : "John's world-renowned smoothies have won the 1973, 1985, 2002, 2004, and 2012 World Smoothie Awards. World dignitaries such as Hillary Clinton, the Dalai Lama, and Cosmos Darwin approve. Drink one at...",
+  3  : "... one of the Housemaster Study Breaks! Held nearly every week, these are a great way to take a break from the intensity of MIT. Fill up on cheese and crackers, fruits and veggies, pancakes, smoothies, and more.",
+  4  : "Simmons is famous for its unique architecture. The facade of the building is punctured by 5,538 square windows. The typical single room has 9; the typical double has 18. Each is individually openable and has a little curtain.",
+  5  : "When Randall Munroe, the creator of xkcd, visited MIT, we converted this room to a ball pit in honor of <a href='https://xkcd.com/150/' target='_blank'>https://xkcd.com/150/</a>",
+  6  : "We hold bi-weekly House Meetings in our two-story theater. Anyone can submit a proposal, and everyone votes. We've fostered residents' interests in fitness, cooking, astronomy, gardening, and more, and we're working on hot tubs, ziplines, and teleporters.",
+  7  : "Sponge Talk is our dormitory mailing list that gets a <i>lot</i> of traffic! We use it for discussions, questions, complaints, announcements, and occasionally the good-ol' entertaining flamewar :D",
+  8  : "Residents spend their Friday nights in a variety of ways: Some play board games; some watch movies; others play a silly game involving ping-pong balls and solo cups. We were asked not to include that in the video.",
+  9  : "Simmons is the only dorm with private bathrooms. Many rooms have their own bathrooms. In the worst case, it'll be right outside your door, shared with the room next to you.",
+  10 : "Every resident is provided with 7 stackable drawers, 2 bookcases, a bed, a dresser, a desk, and a chair. These custom-designed pieces can be rearranged and combined in whatever configuration you like, using only a hex key. The possibilities are endless.",
+  11 : "Although Simmons already has the largest rooms on campus, residents sometimes loft their furniture to make room for hammocks, sofas, and mini-fridges.",
+  12 : "Check out the weird curvilinear wall in Lars's room! Such mystery. Much strange. Wow. (Actually, these are quite common.)",
+  13 : 'Problem sets, or "p-sets", is engineering parlance for weekly homework assignments. Collaboration is encouraged, and the spatious lounges and study rooms on every floor in Simmons are a great place to work on p-sets together.',
+  14 : "Express yourself with chalk on our curvy walls. Bonus points for knowing all 150 original Pokemon. (We are aware Piplup is 4th generation.)",
+  15 : "Nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan.",
+  16 : 'Groups of ten or more friends can form social "lounges" and get sponsored by Simmons to do fun things, like ordering food, going on excursions, or buying ridiculous stuff. This is the Nyan Nyan lounge.',
+  17 : "Simmons Phive Alpha is a lounge comprised mostly of freshmen who live on the 5th floor of A-Tower. You can join an existing lounge, or just make your own (like these kids).",
+  18 : "Ellen is one of our amazing Housemasters. She holds an MIT PhD, has experience with all MIT problems, connections with all MIT people, helicopters on all MIT roofs, and cameras in all MIT meeting rooms. She also fends off advances from MIT men every other week.",
+  19 : "Nika is our beloved House Manager. She leads the housekeeping and maintenance staff to ensure everything stays in tip top shape. Stop by her office on the first floor to say hi!",
+  20 : "The Simmons Dining Hall serves breakfast and dinner every day of the week. Dinner is served from 5-8PM nightly. There's made-to-order stir-fry, a salad bar, rotisserie and grill, comfort food, nightly specials, ice cream, and more!",
+  21 : "All residents of Simmons are required to be on the meal plan. Like Caroline, you'll be excited the first time you swipe into dining. It's all the food you care to eat and all the friends you care to meet!",
+  22 : "The Dining Staff sometimes thinks we're all vegan, and are particularly supportive with vegan options. However, all eaters, vegan or otherwise, can find something good to eat.",
+  23 : "Simmons Dining serves breakfast 8-10AM on weekdays and brunch from 10AM-1PM on weekends. In addition to bagels, you can enjoy fresh fruit, cereal, made-to-order eggs and omelets, pancakes, waffles, bacon and sausages, and more!",
+  24 : "Every year, the freshmen class inadvertently organizes several fire alarm-inspired bonding experiences. Complete with burnt popcorn, blizzards, and upperclassmen in their pajamas, this is one event you can't miss!",
+  25 : "Caitlin lives under this curvy wall, and will get mad if you do this in the middle of the night.",
+  26 : "Get a quality workout in our two-story gym with a view of the Boston skyline equipped with treadmills, ellipticals, free weights, yoga mats, a squat/bench rack, and so much more.",
+  27 : "Simmons has an electrical engineering lab with soldering irons, an oscilloscope, power supplies, and a workshop with hand tools, a mitresaw, a drill press, a router, and circular saws. Work on cool projects right in your dorm!",
+  28 : "Yep. We still have a ballpit.",
+  29 : "Navigating Simmons can be confusing: staircases don't go to all floors, and many floors aren't even continuous. Good luck trying to find the hallway shown in this shot!",
+  30 : "Simmons has laundry rooms throughout the building. Each has two washers and two dryers whose availability can be checked online. When your shower isn't available, you can hop in a washer to take a quick bath.",
+  31 : "There are spatious lounges and study rooms on every floor. Lounges are equipped with large flat-screen televisions and game consoles.",
+  32 : "An example of a grassroots proposal: Andrew wanted a telescope, so we bought one. Sunspots, Saturn, and rooms in MacGregor have never felt closer.",
+  33 : "Depending on your definition of a microwave, we're pretty sure a janky, home-built mass spectrometer isn't explicitly forbidden in the Housing Agreement. ",
+  34 : "GRTs regularly organize study breaks and/or large events with House funds. For example, Tim (and Tim!) recently cleared out the tables from the Dining Hall and held a week-long scooter hockey tournament.",
+  35 : "Simmons Hall is proud to be velociraptor free since 2003. <a href='https://xkcd.com/135/' target='_blank'>https://xkcd.com/135/</a>",
+  36 : "Simmons has two rooftop terraces open to everyone, with spectacular views of campus, the Charles river, and the Boston skyline. Besides our annual Top of the Sponge party, they're a great place to study or just get some fresh air.",
+  };
+
+$(document).ready(function() {
+  for (var i = 1; i < 37; i++) {
+    $(".gallery").append('<div class="frame"><a href="img/i3_2014('+ i +').jpg" rel="facebox"><img src="img/i3_2014('+ i +').jpg"></a><span>' + descriptions[i] + '</span></div>');
+  }
+    $('a[rel*=facebox]').facebox();
+});
+
+</script>
+<div class="horz header">
+  <div class="content">
+    <a href="http://simmons.mit.edu/"><img class="masthead" src="masthead.png"></a>
+  </div>
+</div>
+
+<div class="horz middle">
+  <div class="content">
+    <div class="welcome">
+      Hai 2018s!
+      <br><br>
+      Welcome to the accompanying guide to <a href="http://www.youtube.com/watch?v=A6apDU2fqbk" target="_blank">In The Sponge</a>, our i3 video for 2014. We packed a lot into two minutes, so to help you make the most of it, here's a shot-by-shot explanation of the goings-on in the Sponge, crowd-sourced from current Simmons residents. If you still have questions, post them on <a href="http://simmons.mit.edu/fb2018" target="_blank">our Facebook page</a>.
+    </div>
+    <div class="gallery"></div>
+    <div class="welcome">
+      Think you've got everything? Great! We look forward to seeing you this fall <a href="http://www.youtube.com/watch?v=A6apDU2fqbk" target="_blank">In The Sponge</a>.
+      <br>
+      <br>
+      &lt;3
+      <br>
+      The Residents of Simmons Hall
+    </div>
+  </div>
+<div>
+
+</body>
+</html>
