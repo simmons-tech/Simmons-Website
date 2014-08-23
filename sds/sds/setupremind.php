@@ -28,7 +28,7 @@ if($session->username !== "GUEST") {
   if(isset($lounge)) {
     $query = <<<ENDQUERY
 SELECT count(*) FROM lounge_expenses
-WHERE loungeid='$lounge_esc' AND termsold=0 AND NOT canceled AND
+WHERE loungeid='$lounge_esc' AND termsold=0 AND NOT canceled AND NOT valid AND
       NOT EXISTS
         (SELECT 1 FROM lounge_expense_actions
          WHERE lounge_expense_actions.expenseid=lounge_expenses.expenseid AND
@@ -46,6 +46,29 @@ ENDQUERY;
 		     "'><b>$loungeCount lounge proposal" .
 		     ($loungeCount==1?'':'s') . "</b></a>.");
     } else { sdsClearReminder('loungeCount'); }
+  }
+  
+  if(isset($lounge)) {
+    $query = <<<ENDQUERY
+SELECT count(*) FROM lounge_expenses
+WHERE loungeid='$lounge_esc' AND termsold=0 AND NOT canceled AND valid AND
+      NOT EXISTS
+        (SELECT 1 FROM lounge_expense_actions
+         WHERE lounge_expense_actions.expenseid=lounge_expenses.expenseid AND
+               username='$username_esc')
+ENDQUERY;
+    $result = sdsQuery($query);
+    if(!$result or pg_num_rows($result) != 1)
+      contactTech("Could not search lounge expenses");
+    list($loungeCount) = pg_fetch_array($result);
+    pg_free_result($result);
+    if($loungeCount > 0) {
+      sdsSetReminder('loungeCountExpenses',
+		     "You need to respond to <a href='" . 
+		     sdsLink(SDS_BASE_URL . '/loungeexpense/index.php') .
+		     "'><b>$loungeCount lounge expense" .
+		     ($loungeCount==1?'':'s') . "</b></a>.");
+    } else { sdsClearReminder('loungeCountExpenses'); }
   }
 } else {
 # clear all reminders, and remind the guest to login
