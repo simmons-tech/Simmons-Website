@@ -1,0 +1,154 @@
+html {
+  width: 100%; height: 100%;
+  border: 0; padding: 0; margin: 0;
+}
+
+body {
+  min-height: 600px;
+  min-width: 920px;
+  border: 0; padding: 0; margin: 0;
+  font-family: Lato, sans-serif;
+  background-color: #f7f7f7;
+  font-weight: 300;
+  color: #777;
+  font-size: 14px;
+}
+
+a {
+  color: #3366BB;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.horz {
+  position: relative;
+  width: 100%;
+}
+
+.content {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media all and (max-width: 1440px) and (min-width: 940px) {
+  .content {
+    width: 900px;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  .content {
+    width: 1200px;
+  }
+}
+
+
+.header, .footer {
+  height: 100px;
+  background-color: #eee;
+}
+
+.masthead {
+  position: absolute;
+  top: 22px; left: 0px;
+}
+
+.section {
+  position: relative;
+  display: block;
+  padding: 20px 67px;
+  background-color: white;
+}
+
+.section .section {
+  padding: 10px 20px;
+}
+
+.section .title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.section .section .title {
+  font-size: 21px;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.swatch {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  color: #bbb;
+  margin-right: 2px;
+  font-size: 10px;
+}
+
+.swatch .square {
+  position: relative;
+  display: block;
+  height: 75px;
+  width: 75px;
+  margin: 4px 0px;
+}
+
+/* GRAYS */
+
+.black         { background-color: #000000; }
+.gray-darkest  { background-color: #222222; }
+.gray-darker   { background-color: #444444; }
+.gray-dark     { background-color: #777777; }
+.gray          { background-color: #BBBBBB; }
+.gray-light    { background-color: #DDDDDD; }
+.gray-lighter  { background-color: #EEEEEE; }
+.gray-lightest { background-color: #F7F7F7; }
+.white         {
+  background-color: #FFFFFF;
+  height: 73px; width: 73px;
+  border: solid 1px #eee;
+}
+
+/* COLOURS */
+
+.red { background-color: #bf1e2e; }
+.blue { background-color: #25aae1; }
+.green { background-color: #0b9444; }
+.yellow { background-color: #ffde16; }
+
+.purple { background-color: #652b91; }
+.orange { background-color: #f3951b; }
+
+.pale-red { background-color: #EA6671; }
+.pale-blue { background-color: #6ABBFA; }
+.pale-green { background-color: #6BB97D; }
+.pale-yellow { background-color: #FEE35E; }
+
+.img-inline {
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  max-width: 100%;
+}
+
+.foreword {
+  position: relative;
+  display: block;
+  font-size: 17px;
+  text-align: justify;
+  margin: 20px;
+}
+
+.signature {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin: 10px;
+}
+
+.shadow {
+    box-shadow: 0px 0px 10px #DDDDDD;
+}
