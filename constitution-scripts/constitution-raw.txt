@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html --> 
 <meta name="src" content="constitution.tex"> 
-<meta name="date" content="2014-03-30 21:57:00"> 
+<meta name="date" content="2014-11-17 00:27:00"> 
 <link rel="stylesheet" type="text/css" href="constitution.css"> 
 </head><body 
 >
@@ -18,7 +18,7 @@
 <h2 class="titleHead">The Constitution of Simmons Hall</h2>
 <div class="author" ></div><br />
 <div class="date" ><span 
-class="cmr-12">March 30, 2014</span></div>
+class="cmr-12">November 17, 2014</span></div>
 </div>
 <ol  class="enumerate1" >
 <li 
@@ -254,10 +254,10 @@ House meetings work at the start of each semester; (c) adding proposals to the a
 upcoming House meeting; (d) creating and distributing the agenda for each House meeting
 at least one day prior to the start of that meeting; (e) facilitating and maintaining order at
 all meetings of the House, following an established set of procedures and conducting meetings
-in a fair way that allows all members an opportunity to speak; (f) conducting elections;
+in a fair way that allows all members an opportunity to speak; (f) conducting elections; (g)
 
-(g) generally overseeing the business of the House and directly overseeing the Social Chair,
-Facilities Chair, Technology Chair and the Rooming Chairs.
+generally overseeing the business of the House and directly overseeing the Historian, Social
+Chair, Facilities Chair, Technology Chair and the Rooming Chairs.
 </li>
 <li 
   class="enumerate" id="x1-73x3">The President is the chief diplomat of Simmons Hall and the administrator of the House&#8217;s
@@ -284,10 +284,12 @@ Committee.
 <li 
   class="enumerate" id="x1-77x5">The Secretary is responsible for: (a) documenting all business of the House; (b) keeping a
 public record of all decisions made by the House; (c) maintaining an archive to ensure that
-such documentation is available to all present and future House members; (d) running full
-forum votes by publicly posting a description of the measure(s) being voted on, then issuing
-a ballot on said measures to be concluded before the next house meeting; (e) serving in lieu
-of the Chair of the House if the Chair is temporarily unable to serve.
+such documentation is available to all present and future House members; (d) maintaining a
+public record of the events and discussions that happen in the House and presenting those
+records at every house meeting; (e) running full forum votes by publicly posting a description
+of the measure(s) being voted on, then issuing a ballot on said measures to be concluded
+before the next house meeting; (f) serving in lieu of the Chair of the House if the Chair is
+temporarily unable to serve.
 </li>
 <li 
   class="enumerate" id="x1-79x6">The Treasurer manages the finances of the House and implements the financial decisions made
@@ -296,7 +298,7 @@ bank accounts, including the student activity account maintained by MIT; (b) kee
 of all financial decisions made by the House; (c) reimbursing individuals for House-related
 expenses approved by the House; (d) reporting at every meeting of the House, presenting
 the balances of all House bank accounts and an itemized report of all account activity, and
-making its reports available for viewing by all House Members; (f) Treasurer&#8217;s report should
+making its reports available for viewing by all House Members; (e) Treasurer&#8217;s report should
 include: current balances, anticipated budgets, and effects of current proposals on the budget.
 </li>
 <li 
@@ -312,10 +314,10 @@ Chair and Secretary until the time of the next regular election.
 <ol  class="enumerate2" >
 <li 
   class="enumerate" id="x1-85x1">Committee Definitions and Membership
+
 <ol  class="enumerate3" >
 <li 
   class="enumerate" id="x1-87x1">A committee is a group of House members who collectively focus on particular sets of issues
-
 of importance to Simmons Hall. Committees may be established on a Standing or Ad-Hoc
 basis.
 </li>
@@ -328,13 +330,13 @@ majority vote of the House.
 to this Constitution and included in the following section.
 </li>
 <li 
-  class="enumerate" id="x1-93x4">There are twelve Committee Chairs leading the Standing Committees. They are: (a) the Social
-Chair; (b) the Technology Chair; (c) the Facilities Chair; (d) the Electrical Engineering Lab
-Chair; (e) the Library Chair; (f) the Entertainment Chair; (g) the Reservations Chair; (h)
+  class="enumerate" id="x1-93x4">There are thirteen Committee Chairs leading the Standing Committees. They are: (a) the
+Social Chair; (b) the Technology Chair; (c) the Facilities Chair; (d) the Electrical Engineering
+Lab Chair; (e) the Library Chair; (f) the Entertainment Chair; (g) the Reservations Chair; (h)
 the Workshop Chair; (i) the Rooming Chairs; (j) the Recruitment Chairs; (k) the Athletics
-Chair; (l) the Publicity Chair. These Chairs and their committees must exist at all times, and
-are elected for a one year term. The roles and responsibilities of these committees are stated
-in this Article of the Simmons Hall Constitution.
+Chair; (l) the Publicity Chair; (m) the Historian. These Chairs and their committees must
+exist at all times, and are elected for a one year term. The roles and responsibilities of these
+committees are stated in this Article of the Simmons Hall Constitution.
 </li>
 <li 
   class="enumerate" id="x1-95x5">Each Committee Chair is responsible for: (a) maintaining a committee membership list; (b)
@@ -378,8 +380,8 @@ until after the full membership of the Committee is given a chance to comment an
 Committee decisions are reported to the House by the Committee Chair. If any member of a
 committee disputes a decision reported by the Committee Chair, the Chair of the House may
 call a vote of the committee membership.
-</li></ol>
 
+</li></ol>
 </li>
 <li 
   class="enumerate" id="x1-111x3">Role and Responsibilities of the Social Chair
@@ -598,30 +600,47 @@ teams.
   class="enumerate" id="x1-195x1">The Publicity Chair is tasked with the promotion and publicity of the dorm and its events
 through the use of media content including, but not limited to, posters, flyers, web campaigns,
 7K display, and the I3 video. The Publicity Chair is responsible for (a) promoting the dorm;
-(b) assisting the House Team and House Officers in publicizing dorm events; (c) reporting to
-the President; (d) reporting regularly to the House.
+(b) assisting the House Team and House Officers in publicizing dorm events; (c) writing
+and releasing an alumni newsletter as a high-level overview of occurrences at Simmons; (d)
+reporting to the President; (e) reporting regularly to the House.
+</li></ol>
+</li>
+<li 
+  class="enumerate" id="x1-197x15">Role and Responsibilities of the Historian
+<ol  class="enumerate3" >
+<li 
+  class="enumerate" id="x1-199x1">The Historian is tasked with the high-level goal of preserving a record of Simmons history for
+future students and alumni. The Historian is responsible for (a) ensuring the biweekly records
+written by the Secretary are complete; (b) assisting the Publicity Chair with the writing and
+publishing of the alumni newsletter; (c) creating a yearly retrospective as a high-level and
+student-opinion-aware summary of the year.
+</li>
+<li 
+  class="enumerate" id="x1-201x2">The Historian is responsible for ensuring that the history recorded by the Secretary, the
+Publicity Chair, and the Historian is as unbiased as possible and reflects student opinions.
 </li></ol>
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-197x5">OFFICER PROVISIONS
+  class="enumerate" id="x1-203x5">OFFICER PROVISIONS
 <ol  class="enumerate2" >
 <li 
-  class="enumerate" id="x1-199x1">Elections
+  class="enumerate" id="x1-205x1">Elections
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-201x1">Only undergraduate members of the House are eligible to serve as officers. No individual may
+  class="enumerate" id="x1-207x1">Only undergraduate members of the House are eligible to serve as officers. No individual may
 hold more than one office simultaneously, except in cases where an office remains unfilled for
 an extended length of time.
 </li>
 <li 
-  class="enumerate" id="x1-203x2">All elections must be open to all members of the House, whether or not they are able to
+  class="enumerate" id="x1-209x2">All elections must be open to all members of the House, whether or not they are able to
 attend House meetings.
 </li>
 <li 
-  class="enumerate" id="x1-205x3">The  election  process  is  overseen  by  the  Elections  Organizer.  By  default,  the  Elections
+  class="enumerate" id="x1-211x3">The  election  process  is  overseen  by  the  Elections  Organizer.  By  default,  the  Elections
 Organizer is the Chair of the House. However, if the Chair intends to be a candidate in the
 election or otherwise wishes not to be Elections Organizer, the Chair must select another
+
 undergraduate member of the House (who must not intend to be a candidate) to be the
 Elections Organizer. This selection must be approved by a simple majority vote of the House.
 The selection of Elections Organizer must occur before the beginning of nominations. The
@@ -629,35 +648,34 @@ Elections Organizer cannot be nominated to be a candidate. The Elections Organiz
 all complaints related to the fairness of the election procedure.
 </li>
 <li 
-  class="enumerate" id="x1-207x4">Nominations for officer positions will occur during the week preceding the elections House
+  class="enumerate" id="x1-213x4">Nominations for officer positions will occur during the week preceding the elections House
 meeting. A nominee will be placed on the ballot if their name is mentioned. People can
 nominate themselves and nominate multiple times. One can be nominated by proxy. The
 Chair must nominate anyone who notified him/her by two days before the House meeting.
 </li>
 <li 
-  class="enumerate" id="x1-209x5">During the week before the announced election meeting and the final meeting of the term,
+  class="enumerate" id="x1-215x5">During the week before the announced election meeting and the final meeting of the term,
 there is a special election meeting. During this meeting, all candidates will be given three
-
 minutes to present their platform and one minute to answer questions. A further several
 minutes will be dedicated to questioning any/all of the candidates for a particular office.
 Proxies may read the platform of missing candidates, but may not take part in the question
 answering sessions.
 </li>
 <li 
-  class="enumerate" id="x1-211x6">New officers take office during the first meeting of the spring term. During the transition period
+  class="enumerate" id="x1-217x6">New officers take office during the first meeting of the spring term. During the transition period
 (the time between election results and the first spring House meeting), outgoing officers have
 the responsibility of training the incoming officers and handing over turnover files. Outgoing
 officers also have the responsibility of helping to run the first meeting of the spring term.
 </li>
 <li 
-  class="enumerate" id="x1-213x7">An office becomes vacant when the individual holding that office resigns or is no longer an
+  class="enumerate" id="x1-219x7">An office becomes vacant when the individual holding that office resigns or is no longer an
 official resident of Simmons Hall. An Officer may resign by informing the Chair of the House
 of one&#8217;s resignation, or the Chair of the House may assume that an officer has resigned if that
 officer fails to communicate with the House or otherwise fails to undertake the responsibilities
 of that office.
 </li>
 <li 
-  class="enumerate" id="x1-215x8">If a House Officer position becomes vacant mid-term, the resigning officer should be reminded
+  class="enumerate" id="x1-221x8">If a House Officer position becomes vacant mid-term, the resigning officer should be reminded
 of his/her duty to train the replacement. The Chair of the House should notify the House
 that the spot has become vacant and that they may demonstrate interest within the week. At
 the end of the week, one of two outcomes has occurred: (a) 1 or 0 people have contacted the
@@ -670,64 +688,64 @@ fall within one month of the end of a regular election, then the House Chair may
 discretion in deciding whether to run a vote / appoint directly / wait for the main election.
 </li>
 <li 
-  class="enumerate" id="x1-217x9">The previous section, Article 5 Section 1 Item 8, does not apply to the instance in which the
+  class="enumerate" id="x1-223x9">The previous section, Article 5 Section 1 Item 8, does not apply to the instance in which the
 Secretary choses to assume the role of House Chair permanently.
 </li>
 <li 
-  class="enumerate" id="x1-219x10">Provisionally elected officers take office immediately upon election and fill the vacant office
+  class="enumerate" id="x1-225x10">Provisionally elected officers take office immediately upon election and fill the vacant office
 until the time of the next regular election.
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-221x2">Impeachment
+  class="enumerate" id="x1-227x2">Impeachment
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-223x1">Any member or group of members of the House may propose an Article of Impeachment
+  class="enumerate" id="x1-229x1">Any member or group of members of the House may propose an Article of Impeachment
 against  an  officer,  if  that  member  or  group  feels  that:  (a)  the  officer  is  neglecting  the
+
 responsibilities of that office; (b) the officer is abusing the authority granted to that office;
 (c) the Officer is not acting in the interest of the House. A proposed Article of Impeachment
 must include an explanation that addresses at least one of these three points.
 </li>
 <li 
-  class="enumerate" id="x1-225x2">A proposed Article of Impeachment is placed on the House agenda, discussed, and voted upon
+  class="enumerate" id="x1-231x2">A proposed Article of Impeachment is placed on the House agenda, discussed, and voted upon
 in the same manner as is any other item of House business.
 </li>
 <li 
-  class="enumerate" id="x1-227x3">If the Chair of the House is the object of the Article of Impeachment, the Secretary of the
+  class="enumerate" id="x1-233x3">If the Chair of the House is the object of the Article of Impeachment, the Secretary of the
 House assumes the responsibilities of the Chair for all business relating to the Article of
 Impeachment.
 </li>
 <li 
-  class="enumerate" id="x1-229x4">If an Article of Impeachment is approved by a House vote, the Chair of the House holds a
+  class="enumerate" id="x1-235x4">If an Article of Impeachment is approved by a House vote, the Chair of the House holds a
 hearing open to all members of the House. The proponent of the Article of Impeachment,
-
 the object of the Article of Impeachment, and the Chair are given the opportunity to speak
 at this hearing, and may invite witnesses to speak on their behalf, but any witness may be
 dismissed by the Chair of the House on the grounds of irrelevance. No other individuals are
 allowed to speak at this hearing.
 </li>
 <li 
-  class="enumerate" id="x1-231x5">The Chair of the House may decide, based on the evidence presented at the hearing, to
+  class="enumerate" id="x1-237x5">The Chair of the House may decide, based on the evidence presented at the hearing, to
 remove an individual from office if and only if: (a) the information presented in the Article of
 Impeachment is truthful in content; and (b) the Article of Impeachment sufficiently explains
 why the impeached individual should be removed from office. After deliberation, the Chair
 presents the decision, along with a written explanation, to the House.
 </li>
 <li 
-  class="enumerate" id="x1-233x6">An office that is unoccupied as the result of impeachment proceedings is then treated in the
+  class="enumerate" id="x1-239x6">An office that is unoccupied as the result of impeachment proceedings is then treated in the
 same manner as any other vacancy, except that the removed officer is no longer eligible to
 hold that office.
 </li></ol>
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-235x6">THE HOUSE SUPPORT TEAM
+  class="enumerate" id="x1-241x6">THE HOUSE SUPPORT TEAM
 <ol  class="enumerate2" >
 <li 
-  class="enumerate" id="x1-237x1">Live-In House Support Positions
+  class="enumerate" id="x1-243x1">Live-In House Support Positions
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-239x1">MIT specially selects individuals to live in Simmons Hall in order to ensure the health, safety
+  class="enumerate" id="x1-245x1">MIT specially selects individuals to live in Simmons Hall in order to ensure the health, safety
 and well-being of residents and to promote a vibrant and diverse social life. These include
 Housemasters and Graduate Resident Tutors (GRTs), Visiting Scholars, and the Residential
 Life Area Director among others. Along with the House Manager and staff, these individuals
@@ -736,7 +754,7 @@ operates independently of the House government but must remain in contact with t
 government in order to ensure a mutually supportive working relationship.
 </li>
 <li 
-  class="enumerate" id="x1-241x2">Housemasters, GRTs, and any other individuals who are specially selected by MIT to live in
+  class="enumerate" id="x1-247x2">Housemasters, GRTs, and any other individuals who are specially selected by MIT to live in
 Simmons Hall are all considered Members of the House, but do not have any official standing
 within the House, nor do they have any official responsibilities to the House. Nonetheless,
 they are encouraged to participate in all activities of the House, and to offer their support
@@ -744,41 +762,41 @@ where the House would benefit from the specialized assistance they may be able t
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-243x2">The Housemaster Role
+  class="enumerate" id="x1-249x2">The Housemaster Role
+
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-245x1">The  Simmons  Hall  Housemaster  team  consists  of  the  Housemasters  and  Associate
+  class="enumerate" id="x1-251x1">The  Simmons  Hall  Housemaster  team  consists  of  the  Housemasters  and  Associate
 Housemasters, who are faculty members living with their families in Simmons Hall. The
 Housemasters and Associate Housemasters are appointed to their positions by the Office of
 the Dean for Student Life. They are expected to integrate fully into Simmons and to support
 the entire dorm socially and intellectually.
 </li>
 <li 
-  class="enumerate" id="x1-247x2">The Housemaster role in Simmons falls into four areas: (a) They hold frequent social events,
+  class="enumerate" id="x1-253x2">The Housemaster role in Simmons falls into four areas: (a) They hold frequent social events,
 and participate actively in the social events held by House residents, in order to get to know
 as many undergraduates as possible; (b) they help residents deal with problems, ranging from
 inter-personal or inter-group issues to those of a highly personal and individual nature; (c)
 they supervise the Graduate Resident Tutors; (d) they report to the rest of the MIT faculty
 and to the MIT administration.
-
 </li>
 <li 
-  class="enumerate" id="x1-249x3">When a new Housemaster or Associate Housemaster must be selected, a committee of House
+  class="enumerate" id="x1-255x3">When a new Housemaster or Associate Housemaster must be selected, a committee of House
 Officers is formed to review candidates and make recommendations to the Dean for Student
 Life.
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-251x3">The Graduate Resident Tutor Role
+  class="enumerate" id="x1-257x3">The Graduate Resident Tutor Role
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-253x1">Graduate Resident Tutors are MIT graduate students hired by the Office of the Dean for
+  class="enumerate" id="x1-259x1">Graduate Resident Tutors are MIT graduate students hired by the Office of the Dean for
 Student Life to live in Simmons Hall, sometimes along with partners or families. They are
 expected to integrate fully into the dorm and to provide support to a specific set of residents
 living in a particular area of the building.
 </li>
 <li 
-  class="enumerate" id="x1-255x2">The GRT role in the House falls into four areas: (a) They serve as advisors and mentors to
+  class="enumerate" id="x1-261x2">The GRT role in the House falls into four areas: (a) They serve as advisors and mentors to
 residents, particularly those living within their area; (b) they respond to crises and conflicts
 that occur within the dorm, relying on their training and judgment; (c) they serve as advocates
 for the interests of students, as liaisons between students and Housemasters, and sometimes
@@ -787,78 +805,78 @@ encouraging interaction and providing recreational opportunities for residents, 
 those living within their area.
 </li>
 <li 
-  class="enumerate" id="x1-257x3">The  GRT  role  in  the  dorm  expressly  excludes  any  disciplinary  component.  Only  the
+  class="enumerate" id="x1-263x3">The  GRT  role  in  the  dorm  expressly  excludes  any  disciplinary  component.  Only  the
 Housemasters may officially recommend disciplinary action against a resident of Simmons
 Hall.
 </li>
 <li 
-  class="enumerate" id="x1-259x4">When new GRTs must be hired to fill open positions in Simmons Hall, a House committee
+  class="enumerate" id="x1-265x4">When new GRTs must be hired to fill open positions in Simmons Hall, a House committee
 of House Officers and the Housemaster team is formed to review all candidates and provide
 a list of recommended candidates to the Office of the Dean for Student Life.
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-261x4">Other Special Live-In Positions
+  class="enumerate" id="x1-267x4">Other Special Live-In Positions
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-263x1">Other individuals who are selected to live in Simmons Hall may include Visiting Scholars and
+  class="enumerate" id="x1-269x1">Other individuals who are selected to live in Simmons Hall may include Visiting Scholars and
 their families, Residential Life Associates, or possibly others to be defined in the future.
 </li>
 <li 
-  class="enumerate" id="x1-265x2">Individuals specially selected by an MIT authority to live in Simmons Hall, while Members
+  class="enumerate" id="x1-271x2">Individuals specially selected by an MIT authority to live in Simmons Hall, while Members
 of the House, are not required to have any special responsibilities to the House. However,
 the House may establish House Policies regarding the roles these individuals are expected to
 play in the House. Live-in roles as defined by the House must complement, and must not
+
 contradict, the roles as defined by the MIT authority responsible for appointing or hiring the
 individuals.
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-267x5">Non-Live-In House Support Positions
+  class="enumerate" id="x1-273x5">Non-Live-In House Support Positions
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-269x1">Individuals who play significant support roles within the Simmons Hall community but are
+  class="enumerate" id="x1-275x1">Individuals who play significant support roles within the Simmons Hall community but are
 not residents of Simmons Hall may include the House Manager, staff serving under the House
 Manager, the dining hall staff, and others. These individuals are not considered Members of
 the House, nor do they have any official standing with respect to the House, nor do they
 have any official responsibilities to the House. Nonetheless, the House, through its officers, is
 encouraged to communicate them, and ask for their support in areas where the House would
 benefit from the specialized assistance they may be able to provide.
-
 </li></ol>
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-271x7">USE OF HOUSE RESOURCES
+  class="enumerate" id="x1-277x7">USE OF HOUSE RESOURCES
 <ol  class="enumerate2" >
 <li 
-  class="enumerate" id="x1-273x1">Use of House Funds
+  class="enumerate" id="x1-279x1">Use of House Funds
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-275x1">Every House resident has an equal opportunity to benefit from House funds.
+  class="enumerate" id="x1-281x1">Every House resident has an equal opportunity to benefit from House funds.
 </li>
 <li 
-  class="enumerate" id="x1-277x2">All proposals made to the House should have an explicit time-frame built in. This is especially
+  class="enumerate" id="x1-283x2">All proposals made to the House should have an explicit time-frame built in. This is especially
 important so that treasurers do not need to maintain logs indefinitely of approved, allocated
 money that has never been spent. The &#8220;default&#8221; expiration of allocations (i.e. those that do
 not specify otherwise) will be at the end of the term in which the money was intended to be
 spent, or at the end of the current term if no intended date is specified.
 </li>
 <li 
-  class="enumerate" id="x1-279x3">In order to carry out the duties of their offices, in accordance with Article II Section 5, the
+  class="enumerate" id="x1-285x3">In order to carry out the duties of their offices, in accordance with Article II Section 5, the
 Chair of the House, the President, and the Social Chair shall be granted a fund of $500 at his
 or her discretion. If spent, this fund may only be replenished by vote of the House Committee.
 </li></ol>
 </li></ol>
 </li>
 <li 
-  class="enumerate" id="x1-281x8">CONSTITUTIONAL VALIDITY
+  class="enumerate" id="x1-287x8">CONSTITUTIONAL VALIDITY
 <ol  class="enumerate2" >
 <li 
-  class="enumerate" id="x1-283x1">Constitution Ratification
+  class="enumerate" id="x1-289x1">Constitution Ratification
 <ol  class="enumerate3" >
 <li 
-  class="enumerate" id="x1-285x1">This Constitution is offered by the Governance Subcommittee of the Simmons Hall Founders
+  class="enumerate" id="x1-291x1">This Constitution is offered by the Governance Subcommittee of the Simmons Hall Founders
 Group to the residents of Simmons Hall. The residents of Simmons Hall have made certain
 changes to reflect the first year of Simmons&#8217; existence. The residents have also chosen to ratify
 this Constitution with a two-thirds vote, following a consensus from the House that the voting
