@@ -8,7 +8,7 @@ if(!empty($session->groups['ADMINISTRATORS']))
   echo "<div><a href='officer_setup.php'>Edit list</a></div>\n";
 
 $query = <<<ENDQUERY
-SELECT position,username,
+SELECT position_text,username,
        COALESCE(COALESCE(title||' ','')||firstname||' '||lastname,
                 username) AS name,
        room,phone,email
@@ -28,7 +28,6 @@ if(!$result)
     <th>Position</th>
     <th>Name</th>
     <th>Room</th>
-    <th>Phone</th>
     <th>Email</th>
   </tr>
 <?php
@@ -36,12 +35,12 @@ if(!$result)
 $position = '';
 $oddrow = true;
 while($record = pg_fetch_array($result)) {
-  if($record['position'] !== $position) {
-    $position = $record['position'];
+  if($record['position_text'] !== $position) {
+    $position = $record['position_text'];
     $oddrow = ! $oddrow;
   }
   echo "  <tr class='",$oddrow?'oddrow':'evenrow',"'>\n";
-  echo "    <td>",htmlspecialchars($record['position']),"</td>\n";
+  echo "    <td>",htmlspecialchars($record['position_text']),"</td>\n";
   if($record['name'] === 'NOBODY') {
     echo "    <td>Vacant</td>\n";
   } else {
@@ -50,7 +49,6 @@ while($record = pg_fetch_array($result)) {
       htmlspecialchars($record['name']),"</a></td>\n";
   }
   echo "    <td>",htmlspecialchars($record['room']),"</td>\n";
-  echo "    <td>",htmlspecialchars($record['phone']),"</td>\n";
   echo "    <td><a href='mailto:",
     htmlspecialchars($record['email'],ENT_QUOTES),"'>",
     htmlspecialchars($record['email']),"</a></td>\n";
