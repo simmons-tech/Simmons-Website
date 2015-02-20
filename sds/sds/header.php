@@ -169,6 +169,7 @@ if(!empty($session->groups['USERS'])) {
   navLink("Directory", "https://simmons.mit.edu/directory");
   navLink("Old Directory", "directory/");
   navLink("Student Officers","directory/officers.php");
+  navLink("Medlinks","directory/medlinks.php");
   navLink("GRTs","directory/grt.php");
   navLink("Mailing Lists", "groups/view_mailing_lists.php");
   navLink("Votes and Polls", "polls/polls.php");
