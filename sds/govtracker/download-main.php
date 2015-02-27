@@ -176,7 +176,7 @@ ENDQUERY;
     contactTech("Could not adjourn meeting");
   pg_free_result($result);
 ?>
-  <h1>Meeting Adjoruned</h1>
+  <h1>Meeting Adjourned</h1>
   <p>Meeting data saved: Meeting status changed to Completed, and all TABLED
     proposals moved to open agenda</p>
 <?php
