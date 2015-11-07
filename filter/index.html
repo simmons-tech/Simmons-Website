@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  
+  <title>Simmons/Rooms</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/tipsy.css">
+
+
+  <style>
+    .item_size350.item_Double {
+      background-color: #f3f3f3;
+    }
+    .item_size350.item_Double:hover {
+      background-color: #53adf9;
+    }
+    .item_size300.item_Double {
+      background-color: #f9f9f9;
+    }
+    .item_size300.item_Double:hover {
+      background-color: #53adf9;
+    }
+    .item_size250.item_Double {
+      background-color: #fafafa;
+    }
+    .item_size250.item_Double:hover {
+      background-color: #53adf9;
+    }
+    .item_size250.item_Single {
+      background-color: #f3f3f3;
+    }
+    .item_size250.item_Single:hover {
+      background-color: #53adf9;
+    }
+    .item_size200.item_Single {
+      background-color: #f9f9f9;
+    }
+    .item_size200.item_Single:hover {
+      background-color: #53adf9;
+    }
+    .item_size150.item_Single {
+      background-color: #fafafa;
+    }
+    .item_size150.item_Single:hover {
+      background-color: #53adf9;
+    }
+  </style>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type='text/javascript' src='js/jquery.tipsy.js'></script>
+  <script src="js/allrooms.js" type="text/javascript"></script> 
+  <script src="js/svg.js" type="text/javascript"></script>
+  <script src="js/floorplan-minimal-svg.js" type="text/javascript"></script>
+
+  <script src="https://simmons-dev.mit.edu/api/static/js/simmons-api.js" type="text/javascript"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+
+sim.init({
+  'clientid': 'ZC7RqgjhTM4bjaI3lxgQ2HBTVneMw93jJSkQOV9W'
+});
+sim.login();
+sim.people.me(function(data) {
+  $('#my_username').text(data.username);
+});
+
+var d_taken = $.Deferred();
+var d_occupants = $.Deferred();
+$.when(d_taken, d_occupants).done(function(_taken, _occupants) {
+  ready_to_render();
+
+  $('.btn-available').click();
+});
+
+sim.rooming.taken(function (data) {
+  taken = data;
+  d_taken.resolve(data);
+});
+sim.rooming.occupants(function (data) {
+  occupants = data;
+  d_occupants.resolve(data);
+});
+
+
+ 
+/**********************************************
+*                                             *
+*                   GLOBALS                   *
+*                                             *
+**********************************************/
+
+// defaults:
+
+var desiredSections = ['23AB', '34C', '4AB', '5AB', '6AB', '56C', '7ABC', '8910A', '8910B', '8910C'];
+var desiredCapacity = 'All'; // or 'Double' or 'Single'
+var desiredView     = 'All'; // or 'Boston' or 'Cambridge'
+var desiredWalls    = 'All'; // or 'Boxy' or 'Curvy'
+var desiredBathroom = 'All'; // or 'Shared' or 'Unshared' or 'Private'
+var consider = 'All'; // or 'Available'
+
+// Necessary for nice fades when updating svg
+var oldRooms = [];
+
+
+function highlightInSvg(room) {
+  $('#r' + room).children('*:first-child').attr("fill", "#53adf9");
+  $('#r' + room).children('*:last-child').attr("fill", "#1a7fd5");
+}
+
+
+function unhighlightInSvg(room) {
+  $('#r' + room).children('*:first-child').attr("fill", "#FCAF17");
+  $('#r' + room).children('*:last-child').attr("fill", "#BB762A");
+}
+
+/**********************************************
+*                                             *
+*              UPDATE FUNCTIONS               *
+*                                             *
+**********************************************/
+
+function updateCount(newRooms) {
+  $(".count").html("Results (" + newRooms.length + ")");
+}
+
+function updateList(newRooms) {
+  $('.results-list-doubles').empty();
+  $('.results-list-singles').empty();
+
+  // SORT BY SIZE
+  var sortedNewRooms = [];
+  for (var i = 0; i < newRooms.length; i ++) {
+    sortedNewRooms.push([newRooms[i], -parseInt(roominfo[newRooms[i]].number)+2000*Math.round(roominfo[newRooms[i]].size/50) ]);
+  };
+  sortedNewRooms.sort(function(a, b) { return a[1] - b[1] } );
+  sortedNewRooms.reverse();
+
+  for (var i = 0; i < sortedNewRooms.length; i ++) {
+    var number = sortedNewRooms[i][0]; // [1] is size
+    var section = roominfo[number].section;
+    if(section == '8910A') section = 'A Tower';
+    else if(section == '8910B') section = 'B Tower';
+    else if(section == '8910C') section = 'C Tower';
+//    section = section + ' (~' + 50*Math.round(roominfo[number].size/50) + ' sq. ft.)';
+    var html = '\
+      <div class="item item_size' + roominfo[number].size + ' item_' + roominfo[number].capacity + '" title="' + number + '">\
+        <span class="number">' + number + '</span>\
+        <span class="size">' + section + '</span>\
+      </div>';
+
+    if (roominfo[number].capacity == 'Double') { $('.results-list-doubles').append(html); }
+    if (roominfo[number].capacity == 'Single') { $('.results-list-singles').append(html); }
+  }
+
+  $('.item').hover(function() {
+    highlightInSvg($(this).attr("title"))
+  }, function() {
+    unhighlightInSvg($(this).attr("title"))
+  });
+
+  $('.item').click(function() {
+    var room = $(this).attr("title");
+    moveToRoom(room); // floorplan
+    // updateOverlay(room);
+    // $('.overlay').show();
+  });
+}
+
+function updateSvg(newRooms) {
+
+  // Fade out rooms that no longer appear in results
+  var toFadeOut = [];
+  for (var i = 0; i < oldRooms.length; i ++) {
+    if (newRooms.indexOf(oldRooms[i]) == -1) {
+      toFadeOut.push(oldRooms[i]);
+    }
+  }
+  for (var i = 0; i < toFadeOut.length; i ++) {
+    $('#r' + toFadeOut[i]).fadeOut(300);
+  }
+
+  // Fade in rooms that newly do appear in results
+  var toFadeIn = [];
+  for (var i = 0; i < newRooms.length; i ++) {
+    if (oldRooms.indexOf(newRooms[i]) == -1) {
+      toFadeIn.push(newRooms[i]);
+    }
+  }
+  for (var i = 0; i < toFadeIn.length; i ++) {
+    $('#r' + toFadeIn[i]).fadeIn(300);
+  }
+
+  // update for next time
+  oldRooms = newRooms;
+}
+
+function updateFloorplan(newRooms) {
+  // hide all
+  for (var i = 0; i < allrooms.length; i ++) {
+    $('#' + allrooms[i]).attr("fill", "none");
+  }
+  // highlight new
+  for (var i = 0; i < newRooms.length; i ++) {
+    if (roominfo[newRooms[i]].capacity == 'Single') {
+      $('#' + newRooms[i]).attr("fill", "#54AB67");
+    }
+    else {
+      $('#' + newRooms[i]).attr("fill", "#53adf9");
+    }
+  }
+}
+
+function moveToRoom(room) {
+
+  // magic numbers
+  var WindowWidth = $(".floorplans-container").width();
+  var WindowHeight = $(".floorplans-container").height();
+  var FloorplanWidth = 2225;
+  var FloorplanHeight = 3565;
+
+  var xFraction = parseInt(roominfo[room].x)/115;
+  var xPixels = (xFraction * FloorplanWidth) - WindowWidth/2;
+
+  var yFraction = parseInt(roominfo[room].y)/30;
+  var yPixels = ( ( 1.0 - yFraction) * FloorplanHeight) - WindowHeight/2 - 185;
+  // final term accounts for height of floor in svg
+
+  // flip
+  xPixels = -xPixels; yPixels = -yPixels;
+
+  var fill = $('#' + room).attr("fill");
+  if (fill == 'none') {
+    // highlight
+    $('#' + room).attr("fill", "#FCAF17");
+    $('#' + room).fadeOut(2000);
+  }
+  else {
+    // blink
+  $('#' + room).fadeOut(200); $('#' + room).fadeIn(200);
+  $('#' + room).fadeOut(200); $('#' + room).fadeIn(200);
+  $('#' + room).fadeOut(200); $('#' + room).fadeIn(1000);
+  }
+
+  // MOVE!
+  $('.floorplan').css("transform", "translateY(" + yPixels + "px) translateX(" + xPixels + "px)");
+
+}
+
+function moveToFloor(floor) {
+  // magic numbers
+  var WindowWidth = $(".floorplans-container").width();
+  var WindowHeight = $(".floorplans-container").height();
+  var FloorplanWidth = 2225;
+  var FloorplanHeight = 3565;
+
+  var scaleFactor = WindowWidth / (FloorplanWidth + 40); // 40px padding
+
+  var xPixels = FloorplanWidth/2 - WindowWidth/2;
+
+  var yReAlign = (1 - scaleFactor)/2 * FloorplanHeight; // returns top of map to top of window
+  var floorHeight = FloorplanHeight * scaleFactor / 10;
+  var yPixels = yReAlign + (10-floor) * floorHeight - (WindowHeight/3);
+  // last term is hack to "center" vertically
+
+  // flip
+  xPixels = -xPixels;
+  yPixels = -yPixels;
+
+  // MOVE!
+  $('.floorplan').css("transform", "translateY(" + yPixels + "px) translateX(" + xPixels + "px) scale(" + scaleFactor + ")");
+}
+
+function applyFilters(results) {
+
+  results = inDesiredSectionsAmong(results);
+
+  if (consider == 'Available') { results = availableAmong(results); }
+
+  if (desiredCapacity == 'Singles') { results = singlesAmong(results); }
+  if (desiredCapacity == 'Doubles') { results = doublesAmong(results); }
+
+  if (desiredView == 'Boston')    { results = bostonSideAmong(results);    }
+  if (desiredView == 'Cambridge') { results = cambridgeSideAmong(results); }
+
+  if (desiredWalls == 'Boxy')  { results = boxyWallsAmong(results);  }
+  if (desiredWalls == 'Curvy') { results = curvyWallsAmong(results); }
+
+  if (desiredBathroom == 'Shared')   { results = sharedBathroomsAmong(results);   }
+  if (desiredBathroom == 'Unshared') { results = unsharedBathroomsAmong(results); }
+  if (desiredBathroom == 'Private')  { results = privateBathroomsAmong(results);  }
+
+  return results;
+}
+
+function updateDisplay() {
+  results = applyFilters(allrooms);
+  // results = sortBySize(results);
+  updateCount(results);
+  updateList(results);
+  updateSvg(results);
+  updateFloorplan(results);
+}
+
+// Helper:
+function sortBySize(rooms) {
+  rooms.sort(function(r1, r2) {
+
+    // TODO : 
+    return roominfo[r2]
+    //return roominfo[r2].size - roominfo[r1].size;
+  });
+  return rooms;
+}
+
+
+/**********************************************
+*                                             *
+*               FILTER FUNCTIONS              *
+*                                             *
+**********************************************/
+
+function sharedBathroomsAmong(rooms) {
+  var sharedBathrooms = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].sharesBathroomWith.length > 1) {
+      sharedBathrooms.push(rooms[i]);
+    }
+  }
+  return sharedBathrooms;
+}
+
+function unsharedBathroomsAmong(rooms) {
+  var unsharedBathrooms = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].sharesBathroomWith.length == 1) {
+      unsharedBathrooms.push(rooms[i]);
+    }
+  }
+  return unsharedBathrooms;
+}
+
+function privateBathroomsAmong(rooms) {
+  var privateBathrooms = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].bathroomType == 'internal') {
+      privateBathrooms.push(rooms[i]);
+    }
+  }
+  return privateBathrooms;
+}
+
+function availableAmong(rooms) {
+  var available = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (taken.indexOf(rooms[i]) == -1) {
+      available.push(rooms[i]);
+    }
+  }
+  return available;
+}
+
+function doublesAmong(rooms) {
+  var doubles = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].capacity == 'Double') {
+      doubles.push(rooms[i]);
+    }
+  }
+  return doubles;
+}
+
+function singlesAmong(rooms) {
+  var singles = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].capacity == 'Single') {
+      singles.push(rooms[i]);
+    }
+  }
+  return singles;
+}
+
+function inDesiredSectionsAmong(rooms) {
+  var inDesiredSections = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    section = roominfo[rooms[i]].section
+    if (desiredSections.indexOf(section) != -1) {
+      inDesiredSections.push(rooms[i]);
+    }
+  }
+  return inDesiredSections;
+}
+
+function bostonSideAmong(rooms) {
+  var bostonSide = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].view == 'Boston') {
+      bostonSide.push(rooms[i]);
+    }
+  }
+  return bostonSide;
+}
+
+function cambridgeSideAmong(rooms) {
+  var cambridgeSide = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].view == 'Cambridge') {
+      cambridgeSide.push(rooms[i]);
+    }
+  }
+  return cambridgeSide;
+}
+
+function boxyWallsAmong(rooms) {
+  var boxyWalls = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].curvyWall == 'None') {
+      boxyWalls.push(rooms[i]);
+    }
+  }
+  return boxyWalls;
+}
+
+function curvyWallsAmong(rooms) {
+  var curvyWalls = [];
+  for (var i = 0; i < rooms.length; i ++) {
+    if (roominfo[rooms[i]].curvyWall != 'None') {
+      curvyWalls.push(rooms[i]);
+    }
+  }
+  return curvyWalls;
+}
+
+/*********************************************/
+
+function createTooltipFor(room) {
+  var html = room; // + ' (' + roominfo[room].size + ' sq. ft. ' + roominfo[room].capacity + ')';
+  return html;
+}
+
+function initializeSvg() {
+  $('#Rooms').children().children().hide();
+  $('#Facilities, #Dining, #Firestairs, #Laundry, #Kitchens, #Lounges').hide();
+  // tipsy tooltips
+  for (var i = 0; i < allrooms.length; i ++) {
+    var group = $('#r' + allrooms[i]);
+    group.attr("title", createTooltipFor(allrooms[i]));
+    group.tipsy({gravity: 's', opacity: 1.0});
+  }
+}
+
+function initializeFloorplan() {
+  // tipsy tooltips
+  for (var i = 0; i < allrooms.length; i ++) {
+    var shape = $('#' + allrooms[i]);
+    shape.attr("title", createTooltipFor(allrooms[i]));
+    shape.tipsy({gravity: 's', opacity: 1.0});
+  }
+}
+
+
+function ready_to_render() {
+
+  // load and initialize side-view
+  $('.svg').append(svg);
+  initializeSvg();
+
+  // load floorplan svg
+  $('.floorplan').append(floorplan_minimal_svg);
+  initializeFloorplan();
+
+  // initialize to defaults
+  updateDisplay(allrooms);
+
+  // initialize (center) floorplan
+  moveToFloor('6');
+
+  $('.btn-sideview').click(function() {
+    $('.floorplans-container').hide();
+    $('.map').show();
+
+    // stateful buttons
+    $('.btn-sideview').addClass('active');
+    $('.btn-topview').removeClass('active');
+
+    $('.floorplan-move-controls').fadeOut();
+  });
+
+  $('.btn-topview').click(function() {
+    $('.floorplans-container').show();
+    $('.map').hide();
+
+    // stateful buttons
+    $('.btn-topview').addClass('active');
+    $('.btn-sideview').removeClass('active');
+
+    $('.floorplan-move-controls').fadeIn();
+  });
+
+  $('.btn-section').click(function() {
+    $(this).toggleClass('engaged');
+    section = $(this).attr('value');
+    if (desiredSections.indexOf(section) == -1) {
+      desiredSections.push(section);
+    }
+    else {
+      var index = desiredSections.indexOf(section);
+      desiredSections.splice(index, 1);
+    }
+  });
+
+  $('.btn-toggleAllSections').click(function() {
+    if (desiredSections.length > 0) {
+      desiredSections = [];
+      $(this).siblings().removeClass('engaged');
+    }
+    else {
+      desiredSections = ['23AB', '34C', '4AB', '5AB', '6AB', '56C', '7ABC', '8910A', '8910B', '8910C'];
+      $(this).siblings().addClass('engaged');
+    }
+  });
+
+  $('.btn-doublesOnly').click(function() { desiredCapacity = 'Doubles'; });
+  $('.btn-singlesOnly').click(function() { desiredCapacity = 'Singles'; });
+  $('.btn-all').click(function() {         desiredCapacity = 'All';     });
+
+  $('.btn-considerAll').click(function() { consider = 'All';       });
+  $('.btn-available').click(function() {   consider = 'Available'; });
+
+  $('.btn-bostonSideOnly').click(function() {    desiredView = 'Boston';    });
+  $('.btn-cambridgeSideOnly').click(function() { desiredView = 'Cambridge'; });
+  $('.btn-allSides').click(function() {          desiredView = 'All';       });
+
+  $('.btn-boxyWallsOnly').click(function() {  desiredWalls = 'Boxy';  });
+  $('.btn-curvyWallsOnly').click(function() { desiredWalls = 'Curvy'; });
+  $('.btn-allWalls').click(function() {       desiredWalls = 'All';   });
+
+  $('.btn-shared').click(function() {       desiredBathroom = 'Shared';   });
+  $('.btn-unshared').click(function() {     desiredBathroom = 'Unshared'; });
+  $('.btn-private').click(function() {      desiredBathroom = 'Private';  });
+  $('.btn-allBathrooms').click(function() { desiredBathroom = 'All';      });
+
+  $('.btn-select').click(function() {
+    $(this).siblings().removeClass('engaged');
+    $(this).addClass('engaged');
+  });
+
+  $('.btn').click(function() {
+    updateDisplay();
+  });
+
+  $('.btn-move-to').click(function() {
+    var floor = $(this).html();
+    moveToFloor(floor);
+  });
+
+  $('.input-move-to').keypress(function(e) {
+    if (e.which == 13) {
+      moveToRoom($(this).val());
+      $('.btn-move-to').removeClass('engaged');
+    }
+  }); 
+    setInterval(function() {
+    sim.rooming.taken(function (data) {
+      taken = data;
+      d_taken.resolve(data);
+      updateDisplay();
+    });
+  }, 4000);
+}
+
+</script>
+
+<div class="horz header">
+  <div class="content">
+    <div class="masthead">Filter</div>
+    <div class="beta">BETA</div>
+    <a href="http://simmons.mit.edu/rooming" style="display: block; position: absolute; left: 200px; top: 40px; border: solid 1px #ddd; background-color: #444;
+color: rgba(255, 255, 255, 0.85);" class="btn">Go to Rooming Floorplans</a>
+    <div style="float: right; margin-top: 50px">
+      Logged in as <span id="my_username"></span>
+    </div>
+  </div>
+</div>
+
+<div class="horz filters">
+  <div class="content">
+
+    <div class="controls">
+      <div class="label">Consider</div>
+      <button class="btn btn-select btn-consider btn-considerAll">All Rooms</button>
+      <button class="btn btn-select btn-consider engaged btn-available">Available</button>
+    </div>
+    <br/>
+
+    <div class="controls">
+      <div class="label">Type</div>
+      <button class="btn btn-select engaged btn-all">All</button>
+      <button class="btn btn-select btn-doublesOnly">Doubles</button>
+      <button class="btn btn-select btn-singlesOnly">Singles</button>
+    </div>
+
+    <div class="controls">
+      <div class="label">Side</div>
+      <button class="btn btn-select engaged btn-allSides">All</button>
+      <button class="btn btn-select btn-bostonSideOnly">Boston</button>
+      <button class="btn btn-select btn-cambridgeSideOnly">Cambridge</button>
+    </div>
+
+    <div class="controls">
+      <div class="label">Walls</div>
+      <button class="btn btn-select engaged btn-allWalls">All</button>
+      <button class="btn btn-select btn-boxyWallsOnly">Boxy</button>
+      <button class="btn btn-select btn-curvyWallsOnly">Curvy</button>
+    </div>
+
+    <div class="controls">
+      <div class="label">Bathroom</div>
+      <button class="btn btn-select engaged btn-allBathrooms">All</button> 
+      <button class="btn btn-select btn-shared">Shared</button>
+      <button class="btn btn-select btn-unshared">Unshared*</button>
+      <button class="btn btn-select btn-private">Private</button>
+    </div>
+
+
+    <div class="controls">
+      <div class="label">Sections</div>
+      <button class="btn btn-section engaged btn-23AB" value="23AB">2-3 AB</button>
+      <button class="btn btn-section engaged btn-34C" value="34C">3-4 C</button>
+      <button class="btn btn-section engaged btn-4AB" value="4AB">4 AB</button>
+      <button class="btn btn-section engaged btn-5AB" value="5AB">5 AB</button>
+      <button class="btn btn-section engaged btn-6AB" value="6AB">6 AB</button>
+      <button class="btn btn-section engaged btn-56C" value="56C">5-6 C</button>
+      <button class="btn btn-section engaged btn-7ABC" value="7ABC">7 ABC</button>
+      <button class="btn btn-section engaged btn-8910A" value="8910A">A Tower</button>
+      <button class="btn btn-section engaged btn-8910B" value="8910B">B Tower</button>
+      <button class="btn btn-section engaged btn-8910C" value="8910C">C Tower</button>
+      <button class="btn btn-toggleAllSections">Toggle All</button>
+    </div>
+
+    <div class="footnote">
+      * : The bathroom is <i>outside</i> of the room, but not shared with any other room(s).
+    </div>
+
+  </div>
+</div>
+
+<div class="horz view">
+  <div class="content">
+
+    <div class="view-controls">
+      <img src="img/topview-icon.png" class="btn-topview active"/>
+      <img src="img/sideview-icon.png" class="btn-sideview">
+    </div>
+
+    <div class="view-container">
+      <div class="map">
+        <div class="svg">
+          <!-- from js/svg.js -->
+        </div>
+      </div>
+
+      <div class="floorplans-container">
+        <div class="floorplan">
+          <!-- from js/floorplan-minimal-svg.js -->
+        </div>
+      </div>
+    </div>
+
+    <div class="floorplan-move-controls">
+      <button class="btn-select btn-move-to">1</button>
+      <button class="btn-select btn-move-to">2</button>
+      <button class="btn-select btn-move-to">3</button>
+      <button class="btn-select btn-move-to">4</button>
+      <button class="btn-select btn-move-to">5</button>
+      <button class="btn-select engaged btn-move-to">6</button>
+      <button class="btn-select btn-move-to">7</button>
+      <button class="btn-select btn-move-to">8</button>
+      <button class="btn-select btn-move-to">9</button>
+      <button class="btn-select btn-move-to">10</button>
+      <input class="input-move-to" type="text" placeholder="Room"/>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="horz list">
+  <div class="content">
+
+    <div class="count"></div>
+    <div class="explanation"></div>
+    <div class="lists">
+      <div class="results-list-doubles-label">Doubles</div>
+      <div class="results-list-doubles"></div>
+      <div class="results-list-singles-label">Singles</div>
+      <div class="results-list-singles"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

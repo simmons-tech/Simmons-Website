@@ -92,7 +92,7 @@ ENDQUERY;
 
 <p style="text-size:small">*This is the predicted allocation based solely on
   the number of members signed up, and the time at which they signed up.
-  The amount maxes out at $1000, and is $0 if you do not have 10 members.</p>
+  The amount is $0 if you do not have 10 members.</p>
 <?php
   }
 
@@ -174,7 +174,7 @@ ENDQUERY;
 <p>Lounges are currently eligible for an extra
   <span class="money"><?php echo sdsGetIntOption('lounge-signup-value') ?></span>
   in funding for each new signup, so don't delay!
-  (<a href="http://simmons.mit.edu/residents/archives/lounge.html">see the
+  (<a href="http://simmons.mit.edu/loungebylaws.html">see the
     lounge bylaws for details</a>)</p>
 
 <?php #'

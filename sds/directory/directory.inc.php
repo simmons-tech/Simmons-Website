@@ -14,12 +14,12 @@ function showDirectorySearchForm($formTarget="", $maintain=array()) {
   echo sdsForm() . "\n";
   echo hiddenInputs($maintain) . "\n";
 ?>
-<p>Try the New Directory at <a target="_blank" href="https://simmons.mit.edu/directory">simmons.mit.edu/directory</a>!</p>
+<!--p>Try the New Directory at <a target="_blank" href="https://simmons.mit.edu/directory">simmons.mit.edu/directory</a>!</p-->
 <table>
   
   <tr>
     <td align="right">Firstname:</td>
-    <td><input name="firstname" type="text" size="12" /></td>
+    <td><input name="firstname" type="text" size="12" autofocus /></td>
   </tr>
 
   <tr>
@@ -248,7 +248,7 @@ function showDirectorySearchResults($searchResult,$userEntryPage="",
     }
 
     echo "  <tr bgcolor='", $color,"'>\n";
-    echo "    <td><a ",$link,">",htmlspecialchars($data->lastname),
+    echo "    <td><a tabindex='1' ",$link,">",htmlspecialchars($data->lastname),
       "</a></td>\n";
     echo "    <td><a ",$link,">",htmlspecialchars($data->firstname),
       "</a></td>\n";

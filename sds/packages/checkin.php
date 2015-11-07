@@ -169,7 +169,7 @@ if(!isset($session->data['packages_ignoreold']) or
 ?>
 <form action="checkinedit.php" method="get">
   <?php echo sdsForm() ?>
-  <input type="submit" value="Add Packages" />
+  <input type="submit" value="Add Packages" tabindex="1" />
 </form>
 
 <?php

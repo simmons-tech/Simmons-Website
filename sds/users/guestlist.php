@@ -60,6 +60,14 @@ ENDQUERY;
     pg_free_result($countresult);
     if($count >= 25) { return false; }
 
+# Please contact ambhave@mit.edu if you have any questions about the following:
+    if (strstr(strtolower($guest_esc), 'ferrante')) {
+      mail('jessig@mit.edu','Simmons DB: Guest Flagged: ' . $guest_esc,
+        "The following Simmons guest was flagged:\r\n\r\nGuest: ".$guest_esc."\r\nGuest Of: ".$username_esc,
+        "From: ambhave@mit.edu\r\nReply-to: ambhave@mit.edu");
+    }
+
+
     $query = <<<ENDQUERY
 INSERT INTO guest_list
        (username,       guest,       date_added,date_invalid,current,onetime)

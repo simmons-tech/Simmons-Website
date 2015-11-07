@@ -166,8 +166,8 @@ JSFX_FloatDiv("divBottomRight", -45, -45).flt();
 navGroup("SIMMONS DB");
 navLink("Home", SDS_HOME_URL);
 if(!empty($session->groups['USERS'])) {
-  navLink("Directory", "https://simmons.mit.edu/directory");
-  navLink("Old Directory", "directory/");
+  //navLink("Directory", "https://simmons.mit.edu/directory");
+  navLink("Directory", "directory/");
   navLink("Student Officers","directory/officers.php");
   navLink("Medlinks","directory/medlinks.php");
   navLink("GRTs","directory/grt.php");
