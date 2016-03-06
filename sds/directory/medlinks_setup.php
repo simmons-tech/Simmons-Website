@@ -16,22 +16,18 @@ if(isset($_REQUEST['order'])) {
       continue;
     list($type,$number) = explode(':',$officerid,2);
     $number = (int) $number;
-    $position = trim(maybeStripslashes($_REQUEST['position'][$officerid]));
-    $position_text = trim(maybeStripslashes($_REQUEST['position_text'][$officerid]));
     $username = trim(maybeStripslashes($_REQUEST['username'][$officerid]));
 
-    if($position === '' or $username === '')
+    if($username === '')
       continue;
 
     $createnew = true;
-    $position_esc = pg_escape_string($position);
-    $position_text_esc = pg_escape_string($position_text);
     $username_esc = pg_escape_string($username);
     if($type === 'officer') {
       $query = <<<ENDQUERY
 SELECT 1 FROM medlinks
 WHERE officerid=$number AND username='$username_esc' AND
-      position='$position_esc' AND position_text='$position_text_esc' AND removed IS NULL
+      removed IS NULL
 ENDQUERY;
       $result = sdsQuery($query);
       if(!$result) {
@@ -72,8 +68,8 @@ ENDQUERY;
 	pg_free_result($result);
       }
       $query = <<<ENDQUERY
-INSERT INTO medlinks (username,       position, position_text)
-VALUES               ('$username_esc','$position_esc', '$position_text_esc')
+INSERT INTO medlinks (username)
+VALUES               ('$username_esc')
 RETURNING officerid
 ENDQUERY;
       $result = sdsQuery($query);
@@ -133,7 +129,7 @@ sdsIncludeHeader("Student Officer Management","",
 		 "onload='officerdragdrop=dragdropSetup(\"officerlist\",\"orderReturn\")'");
 
 $query = <<<ENDQUERY
-SELECT officerid,position,position_text,username FROM medlinks
+SELECT officerid,username FROM medlinks
 WHERE removed IS NULL ORDER BY ordering,officerid
 ENDQUERY;
 
@@ -155,12 +151,6 @@ if(!$result)
 <?php
 while($data = pg_fetch_object($result)) {
   echo "    <div id='officer:",$data->officerid,"' class='dragitem'>\n";
-  echo "      Title:<input type='text' name='position_text[officer:",
-    $data->officerid,
-    "]' value='",htmlspecialchars($data->position_text,ENT_QUOTES),"' />\n";
-  echo "      Position Identifier:<input type='text' name='position[officer:",
-    $data->officerid,
-    "]' value='",htmlspecialchars($data->position,ENT_QUOTES),"' />\n";
   echo "      Username:<input type='text' name='username[officer:",
     $data->officerid,
     "]' value='",htmlspecialchars($data->username,ENT_QUOTES),"' />\n";
@@ -179,8 +169,6 @@ while($data = pg_fetch_object($result)) {
 </form>
 
 <div id='officertemplate' class='dragtemplate'>
-  Title:<input type='text' name='position_text[]' />
-  Position Identifier:<input type='text' name='position[]' />
   Username:<input type='text' name='username[]' />
 </div>
 

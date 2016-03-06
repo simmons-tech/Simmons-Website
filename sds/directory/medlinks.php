@@ -8,7 +8,7 @@ if(!empty($session->groups['ADMINISTRATORS']))
   echo "<div><a href='medlinks_setup.php'>Edit list</a></div>\n";
 
 $query = <<<ENDQUERY
-SELECT position_text,username,
+SELECT username,
        COALESCE(COALESCE(title||' ','')||firstname||' '||lastname,
                 username) AS name,
        room,phone,email
@@ -31,15 +31,10 @@ if(!$result)
   </tr>
 <?php
 
-$position = '';
 $oddrow = true;
 while($record = pg_fetch_array($result)) {
-  if($record['position_text'] !== $position) {
-    $position = $record['position_text'];
-    $oddrow = ! $oddrow;
-  }
+  $oddrow = ! $oddrow;
   echo "  <tr class='",$oddrow?'oddrow':'evenrow',"'>\n";
-  //echo "    <td>",htmlspecialchars($record['position_text']),"</td>\n";
   if($record['name'] === 'NOBODY') {
     echo "    <td>Vacant</td>\n";
   } else {
