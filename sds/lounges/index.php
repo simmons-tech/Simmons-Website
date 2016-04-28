@@ -57,10 +57,11 @@ $signup_value = sdsGetIntOption('lounge-signup-value');
       <th>Name</th>
       <th>1<sup>st</sup> Contact</th>
       <th>2<sup>nd</sup> Contact</th>
-      <th>Funds</th>
+      <th>Fall Funds</th>
+      <th>Spring Funds</th>
     </tr>
 <?php
-$query = "SELECT lounge,description,url,contact,contact2,allocation FROM active_lounges ORDER BY lounge";
+$query = "SELECT lounge,description,url,contact,contact2,allocation,allocation2 FROM active_lounges ORDER BY lounge";
 $result = sdsQuery($query);
 if(!$result)
   contactTech("Can't find lounges");
@@ -80,6 +81,7 @@ while($record = pg_fetch_array($result)) {
       <td><input type="text" name="contact[<?php echo $lounge ?>]" value="<?php echo htmlspecialchars($record['contact']) ?>" size="10" /></td>
       <td><input type="text" name="contact2[<?php echo $lounge ?>]" value="<?php echo htmlspecialchars($record['contact2']) ?>" size="10" /></td>
       <td><input type="text" name="allocation[<?php echo $lounge ?>]" value="<?php echo $record['allocation'] ?>" size="7" /></td>
+      <td><input type="text" name="allocation2[<?php echo $lounge ?>]" value="<?php echo $record['allocation2'] ?>" size="7" /></td>
     </tr>
     <tr>
       <td></td>

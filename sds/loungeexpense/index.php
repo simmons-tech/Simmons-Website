@@ -251,13 +251,15 @@ echo "<table class='loungeinfo'>\n";
     <td></td>
     <td></td>
     <td></td>
-    <th colspan="3" style="border-bottom-style:solid;border-color:black">Allocation</th>
+    <th colspan="5" style="border-bottom-style:solid;border-color:black">Allocation</th>
   </tr>
   <tr>
     <th>Lounge</th>
     <th>Members</th>
     <th>Avg.&nbsp;Part.</th>
     <th>Events</th>
+    <th>Fall Total</th>
+    <th>Spring Total</th>
     <th>Total</th>
     <th>Used</th>
     <th>Remaining</th>
@@ -266,8 +268,9 @@ echo "<table class='loungeinfo'>\n";
     $query = <<<ENDQUERY
 SELECT description,membership,to_char(avgparts,'FM9990.00') AS avgparts,
        numevents,CAST(COALESCE(allocation,0) AS decimal(10,2)) AS allocation,
+       CAST(COALESCE(allocation2,0) AS decimal(10,2)) AS allocation2,
        totalspent,
-       CAST(COALESCE(allocation,0) AS decimal(10,2))-totalspent AS remaining
+       CAST(COALESCE(allocation,0) AS decimal(10,2))+CAST(COALESCE(allocation2,0) AS decimal(10,2))-totalspent AS remaining
 FROM lounge_summary_report
 ORDER BY description
 ENDQUERY;
@@ -298,7 +301,9 @@ ENDQUERY;
       if($allocated) {
 	echo "    <td class='number'>",$record['avgparts'],"</td>\n";
 	echo "    <td class='number'>",$record['numevents'],"</td>\n";
-	echo "    <td class='money'>",$record['allocation'],"</td>\n";
+	echo "    <td class='money'>",$record['allocation'],"</td>\n";	
+	echo "    <td class='money'>",$record['allocation2'],"</td>\n";
+	echo "    <td class='money'>",number_format($record['allocation']+$record['allocation2'],2,'.',''),"</td>\n";
 	echo "    <td class='money'>",$record['totalspent'],"</td>\n";
 	echo "    <td class='money",($record['remaining']<0?' neg':''),"'>",
 	  $record['remaining'],"</td>\n";

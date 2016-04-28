@@ -14,7 +14,7 @@ if(is_array($_REQUEST['name'])) {
     $lounge_esc = pg_escape_string($lounge);
     $lounge_disp = htmlspecialchars($lounge);
 
-    $query = "SELECT description,contact,contact2,url,allocation FROM active_lounges WHERE lounge='lounge-$lounge_esc'";
+    $query = "SELECT description,contact,contact2,url,allocation,allocation2 FROM active_lounges WHERE lounge='lounge-$lounge_esc'";
     $result = sdsQuery($query);
     if(!$result)
       contactTech("Could not query lounges");
@@ -59,6 +59,16 @@ if(is_array($_REQUEST['name'])) {
 	display_error("allocation ".htmlspecialchars($allocation).
 		      " of lounge $lounge_disp does not look like a dollar amount.");
       $lounge_updates[$lounge]['allocation'] = pg_escape_string($allocation);
+    }
+
+    $allocation2 = trim(maybeStripslashes($_REQUEST['allocation2'][$lounge]));
+    if($allocation2 === '') {
+      $lounge_updates[$lounge]['allocation2'] = null;
+    } elseif($allocation2 !== $record['allocation2']) {
+      if(!preg_match('/^\d*(?:\.(?:\d\d)?)?$/',$allocation2))
+	display_error("allocation2 ".htmlspecialchars($allocation2).
+		      " of lounge $lounge_disp does not look like a dollar amount.");
+      $lounge_updates[$lounge]['allocation2'] = pg_escape_string($allocation2);
     }
 
     $url = trim(maybeStripslashes($_REQUEST['url'][$lounge]));

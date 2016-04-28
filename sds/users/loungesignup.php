@@ -56,8 +56,8 @@ if(isset($lounge)) {
   $lounge_esc = pg_escape_string($lounge);
   $query = <<<ENDQUERY
 SELECT active_lounges.description,url,contact,contact2,
-       lounge_summary_report.allocation,predalloc,
-       (lounge_summary_report.allocation-totalspent) AS remaining,
+       lounge_summary_report.allocation,lounge_summary_report.allocation2,predalloc,
+       (lounge_summary_report.allocation+lounge_summary_report.allocation2-totalspent) AS remaining,
        (COALESCE(d1.title||' ','')||d1.firstname||' '||d1.lastname) AS name1,
        (COALESCE(d2.title||' ','')||d2.firstname||' '||d2.lastname) AS name2,
        d1.email AS email1,d2.email AS email2
@@ -79,11 +79,16 @@ ENDQUERY;
 
   echo "<h2 style='text-align:center'>You have signed up with ",$desc,"</h2>\n";
   if(isset($data->allocation)) {
-    echo "<h3 style='text-align:center'>Total Allocation:\n";
+    echo "<h3 style='text-align:center'>Fall Allocation:\n";
     echo "  <span class='money'>",$data->allocation,"</span></h3>\n";
+    echo "<h3 style='text-align:center'>Spring Allocation:\n";
+    echo "  <span class='money'>",$data->allocation2,"</span></h3>\n";
+
+    echo "<h3 style='text-align:center'>Total Allocation:\n";
+    echo "  <span class='money'>",number_format($data->allocation+$data->allocation2,2,'.',''),"</span></h3>\n";
     echo "<h3 style='text-align:center'>Remaining Funds:\n";
     echo "  <span class='money",$data->remaining<0?' neg':'',"'>",
-      $data->remaining,"</span></h3>\n";
+      number_format($data->remaining,2,'.',''),"</span></h3>\n";
   } else {
 ?>
 <h3 style='text-align:center'><?php echo $desc ?>

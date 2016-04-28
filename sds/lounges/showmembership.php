@@ -4,7 +4,7 @@ sdsRequireGroup("LOUNGE-CHAIRS");
 
 sdsIncludeHeader("Lounge Membership");
 
-$query = "SELECT loungeid,description,membership,allocation,predalloc FROM lounge_summary_report ORDER BY loungeid";
+$query = "SELECT loungeid,description,membership,allocation,allocation2,predalloc FROM lounge_summary_report ORDER BY loungeid";
 $loungeresult = sdsQuery($query);
 if(!$loungeresult)
   contactTech("Could not search lounges");
@@ -21,6 +21,8 @@ if(!$loungeresult)
     <th>Name</th>
     <th>Membership</th>
     <th style="white-space:normal">Predicted Allocation</th>
+    <th style="white-space:normal">Fall Allocation</th>
+    <th style="white-space:normal">Spring Allocation</th>
     <th style="white-space:normal">Actual Allocation</th>
   </tr>
 <?php
@@ -41,6 +43,8 @@ while($lounge = pg_fetch_array($loungeresult)) {
   echo "    <td class='membership'>",$lounge['membership'],"</td>\n";
   echo "    <td class='money'>",$lounge['predalloc'],"</td>\n";
   echo "    <td class='money'>",$lounge['allocation'],"</td>\n";
+  echo "    <td class='money'>",$lounge['allocation2'],"</td>\n";
+  echo "    <td class='money'>",number_format($lounge['allocation']+$lounge['allocation2'],2,'.',''),"</td>\n";
   echo "  </tr>\n";
 }
 echo "</table>\n\n";

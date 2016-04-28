@@ -144,7 +144,7 @@ EOM;
   }
 }
 
-$query = "SELECT allocation - totalspent FROM lounge_summary_report WHERE loungeid = '$lounge_esc'";
+$query = "SELECT allocation+allocation2 - totalspent FROM lounge_summary_report WHERE loungeid = '$lounge_esc'";
 $result = sdsQuery($query);
 if(!$result or pg_num_rows($result) != 1)
   contactTech("Could not query funds");
