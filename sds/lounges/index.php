@@ -29,7 +29,7 @@ $signup_value = sdsGetIntOption('lounge-signup-value');
 </form>
 
 <h2>Administrative Tasks</h2>
-WARNING: There are no undo buttons.
+<strong style="color:red">WARNING: There are no undo buttons.</strong>
 <table>
   <tr>
     <td>
