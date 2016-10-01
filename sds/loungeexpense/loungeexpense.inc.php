@@ -62,13 +62,13 @@ function validate_expense($expenseid) {
   $loungeid_esc = pg_escape_string($loungeid);
   $amountspent = $data['amountspent'];
 
-  $query = "SELECT allocation FROM active_lounges WHERE lounge='$loungeid_esc'";
+  $query = "SELECT allocation,allocation2 FROM active_lounges WHERE lounge='$loungeid_esc'";
   $result = sdsQuery($query);
   if(!$result or pg_num_rows($result) != 1) {
     contactTech("Could not find lounge",false);
     return null;
   }
-  list($allocation) = pg_fetch_array($result);
+  list($allocation,$allocation2) = pg_fetch_array($result);
   pg_free_result($result);
 
   $query = "SELECT count(*) FROM active_directory WHERE lounge='$loungeid_esc'";
@@ -111,12 +111,12 @@ function validate_expense($expenseid) {
   }
 
   # spending limits
-  if($commits*$allocation/$membership < $amountspent) {
+  if($commits*($allocation+$allocation2)/$membership < $amountspent) {
     return false;
   }
 
   # check for fund exhaustion
-  $query = "SELECT allocation - totalspent FROM lounge_summary_report WHERE loungeid = '$loungeid_esc'";
+  $query = "SELECT allocation+allocation2 - totalspent FROM lounge_summary_report WHERE loungeid = '$loungeid_esc'";
   $result = sdsQuery($query);
   if(!$result or pg_num_rows($result) != 1) {
     contactTech("Could not read lounge summary",false);

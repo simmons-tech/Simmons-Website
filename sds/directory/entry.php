@@ -78,11 +78,11 @@ if($directory_data) {
   }
 
 # generate phone text
-  $phone = '';
-  if (strlen($directory_data->phone)) {
-    $phone = "<tr><td>Phone:</td> <td>".
-      htmlspecialchars($directory_data->phone)."</td></tr>\n";
-  }
+#  $phone = '';
+#  if (strlen($directory_data->phone)) {
+#    $phone = "<tr><td>Phone:</td> <td>".
+#      htmlspecialchars($directory_data->phone)."</td></tr>\n";
+#  }
 
 # generate year text
   $year = '';
@@ -119,9 +119,13 @@ if($directory_data) {
 # generate quote text
   $quote = '';
   if (strlen($directory_data->quote)) {
+    require_once('../vendor/markdown.php');
+    $quote = Markdown(htmlspecialchars($directory_data->quote));
     $quote = '<tr><td colspan="2"><blockquote><p class="quote">'
-      . nl2br(htmlspecialchars($directory_data->quote))
-      . "</p></blockquote></td></tr>\n";
+      . $quote . "</p></blockquote></td></tr>\n";
+    #$quote = '<tr><td colspan="2"><blockquote><p class="quote">'
+    #  . nl2br(htmlspecialchars($directory_data->quote))
+    #  . "</p></blockquote></td></tr>\n";
   }
 
   $favorite = '';

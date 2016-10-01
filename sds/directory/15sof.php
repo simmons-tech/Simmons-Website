@@ -70,9 +70,13 @@ if(!$result) {
   # generate quote text
   $quote = '';
   if (strlen($data->quote)) {
-    $quote = '<tr><td colspan="2" width="300"><blockquote><p class="quote">' .
-      nl2br(htmlspecialchars($data->quote)) .
-      "</p></blockquote></td></tr>\n";
+    require_once('vendor/markdown.php');
+    $quote = Markdown(htmlspecialchars($data->quote));
+    $quote = '<tr><td colspan="2" width="300"><blockquote><p class="quote">'
+      . $quote . "</p></blockquote></td></tr>\n";
+    #$quote = '<tr><td colspan="2" width="300"><blockquote><p class="quote">' .
+    #  nl2br(htmlspecialchars($data->quote)) .
+    #  "</p></blockquote></td></tr>\n";
   }
 
   $favorite = '';

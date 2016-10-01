@@ -34,7 +34,7 @@ if(!$result)
   <tr>
     <th>Name</th>
     <th>Room</th>
-    <th>Phone</th>
+ <?php /*   <th>Phone</th> */ ?>
     <th>Email</th>
   </tr>
 <?php
@@ -52,7 +52,7 @@ while($record = pg_fetch_array($result)) {
     sdsLink('entry.php','username='.urlencode($record['username'])),"'>",
     htmlspecialchars($record['name']),"</a></td>\n";
   echo "    <td>",htmlspecialchars($record['room']),"</td>\n";
-  echo "    <td>",htmlspecialchars($record['phone']),"</td>\n";
+//  echo "    <td>",htmlspecialchars($record['phone']),"</td>\n";
   echo "    <td><a href='mailto:",
     htmlspecialchars($record['email'],ENT_QUOTES),"'>",
     htmlspecialchars($record['email']),"</a></td>\n";

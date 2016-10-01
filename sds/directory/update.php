@@ -163,6 +163,12 @@ if (pg_num_rows($result) == 1) {
       <textarea name="quote" type="text" rows="4" cols="38"><?php echo htmlspecialchars($data->quote) ?></textarea>
     </td>
   </tr>
+  <tr>
+    <td></td>
+    <td style="font-size: small">
+      Quotes now support markdown, which means you can add rich text and images/gifs in your quotes. Goto <a href="https://stackedit.io/editor" target="_blank">https://stackedit.io/editor</a> to format your quote and then paste the markdown text (the code on the left column on that website) here in the quote box.
+    </td>
+  </tr>
 
   <tr>
     <td align="right">My Favorite</td>

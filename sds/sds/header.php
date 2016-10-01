@@ -35,20 +35,19 @@ require_once(SDS_BASE . "/sds/setupremind.php");
   <title><?php echo $sdsPageHeadTitle ?></title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   <link rel="stylesheet" href="https://simmons.mit.edu/simmons.css" type="text/css" /> 
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77056932-1', 'auto');
+  ga('set', 'userId', '<?php echo $session->username ?>');
+  ga('send', 'pageview');
+
+  </script>
   
-  <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-29172658-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-  </script> 
   <?php echo $sdsHeadHTML ?>
 </head>
 <body<?php if(isset($sdsBodyAttrs)) { echo ' ',$sdsBodyAttrs; } ?>>
@@ -204,8 +203,8 @@ if(!empty($session->groups['USERS'])) {
   navLink("Guest List", "users/guestlist.php");
   navLink("Lounge Membership", "users/loungesignup.php");
   navLink("Login Password", "users/password.php");
-  navLink("Printer Use","users/printeruse.php");
-  navLink("Rooming Lottery","users/lottery.php");
+//  navLink("Printer Use","users/printeruse.php");
+//  navLink("Rooming Lottery","users/lottery.php");
 }
 
 ##
@@ -318,12 +317,13 @@ if(!empty($session->groups['LOUNGE-CHAIRS']) or
 ## WIKI GROUP
 ##
 
+/*
 if(!empty($session->groups['USERS'])) {
   navGroup("WIKI");
   navLink("Simmons Wiki","http://simmons.mit.edu/wiki/");
   navLink("Access Control","groups/wikiaccess.php");
   navLink("Account Creation","users/wiki_account.php");
-}
+}*/
 
 navGroup(null);
 
