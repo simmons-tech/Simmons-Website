@@ -71,7 +71,7 @@ while($lounge = pg_fetch_array($loungeresult)) {
   while($member = pg_fetch_array($memberresult)) {
     echo "  <li>",
       htmlspecialchars($member['firstname']." ".$member['lastname']),
-      " (",htmlspecialchars($member['username']),")</li>\n";
+      " (",htmlspecialchars($member['username']),") <a href='removeuser.php?username=" . $member['username'] . "'>Remove</a></li>\n";
   }
   pg_free_result($memberresult);
   echo "</ul>\n\n";

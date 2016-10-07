@@ -267,7 +267,7 @@ ENDQUERY;
   if($removenote) {
     display_warning("Group lounge-" . htmlspecialchars($lounge) .
 		    " already has removal notifications. Skipping...");
-  } else {
+  }/* else {
     global $remove_subject;
     global $remove_message;
     $subject = str_replace('^lounge^',$lounge_esc,$remove_subject);
@@ -286,7 +286,7 @@ ENDQUERY;
       return null;
     }
     pg_free_result($result);
-  }
+  }*/
 
   $query = "SELECT 1 FROM sds_group_notifications WHERE groupname = 'lounge-$lounge_esc' AND changetype = 'created' AND recipient_groupname = 'SIMMONS-LOUNGES'";
   $result = sdsQuery($query);
