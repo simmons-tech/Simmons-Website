@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SimHack</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='pics/duck.png'/>
+
+  <script language="JavaScript">
+    $( document ).ready(function() {
+      $("#goToAbout").click(function(){
+        $("html, body").animate({ scrollTop: $('#aboutDiv').offset().top }, 500);
+      });
+      $("#goToFAQ").click(function(){
+        $("html, body").animate({ scrollTop: $('#FAQDiv').offset().top }, 500);
+      });
+      $("#goToRegister").click(function(){
+        $("html, body").animate({ scrollTop: $('#registerDiv').offset().top }, 500);
+      });
+      $("#goToPrizes").click(function(){
+        $("html, body").animate({ scrollTop: $('#prizeDiv').offset().top }, 500);
+      })
+    });
+  </script>
+
+  <style>
+    html{
+      overflow-x:hidden;
+    }
+
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .jumbotron{
+      background-image: url("pics/bg2.jpg");
+      height:100vh;
+      margin-bottom: 0px;
+    }
+    .navbar-custom{
+      background:#2c3e50;
+      border-color:#2c3e50;
+    }
+    .navbar-nav {
+      width: 100%;
+      text-align: center;
+    }
+
+    .navbar-nav li {
+        float: none;
+        display: inline-block;
+      }
+
+    .navbar-nav > li > a {padding-top:15px !important; padding-bottom:5px !important;}
+    .navbar {min-height:50px !important}
+
+    .navbar-custom .navbar-nav .item{
+      font-weight: bold;
+      padding-left: 25px;
+      padding-right: 25px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .navbar-custom .navbar-nav > li > #goToAbout:hover, .navbar-custom .navbar-nav > li > #goToAbout:focus {
+      color: #dc4a38;
+    }
+    .navbar-custom .navbar-nav > li > #goToFAQ:hover, .navbar-custom .navbar-nav > li > #goToFAQ:focus {
+      color: #1abc9c;
+    }
+    .navbar-custom .navbar-nav > li > #goToRegister:hover, .navbar-custom .navbar-nav > li > #goToRegister:focus {
+      color: #f1c40f;
+    }
+    .navbar-custom .navbar-nav > li > #goToPrizes:hover, .navbar-custom .navbar-nav > li > #goToPrizes:focus {
+      color: #FFBC29;
+    }
+
+    .custom-container{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .custom-container h1{
+      font-size: 75pt;
+      font-weight: bold;
+      color:#2c3e50;
+      display: inline;
+    }
+
+    .custom-container h2{
+       color:#2c3e50;
+    }
+
+    .custom-container #leftcol{
+      padding-top: 20vh;
+      transform: rotate(-12deg);
+    }
+
+    .custom-container #rightcol{
+      transform: rotate(-15deg);
+      padding-top: 15vh;
+    }
+
+    .custom-container #rightcol img {
+        max-width: 30vw;
+        height: auto;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .custom-container #leftcol{
+          padding-top: 12vh;
+          transform: rotate(-12deg);
+        }
+      .custom-container #rightcol img {
+        max-width: 50vw;
+        height: auto;
+      }
+      .custom-container h1{
+        font-size: 40pt;
+      }
+      .custom-container h2{
+        font-size: 20pt;
+      }
+    }
+
+    .placeholder{
+      background: #2c3e50;
+      height: 10px;
+    }
+
+    .about{
+      background: #FC5454;
+      height: 350px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .about .heading{
+      color: #FFFFFF;
+      text-shadow: black -0.1em 0.1em 0.2em;
+      text-align: left;
+      padding-top: 85px;
+    }
+
+    .about .row{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .about .heading h1{
+      font-size: 35pt;
+      font-weight: bold;
+    }
+
+    .about .content{
+      color: #FFFFFF;
+      text-align: left;
+      padding-top: 110px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      .about{
+          height: auto;
+      }
+
+      .about .heading{
+        padding-top: 30px;
+      }
+
+      .about .content{
+        color: #FFFFFF;
+        text-align: left;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+
+    .faq {
+      background: #4ECDC4;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .faq .heading{
+      color: #FFFFFF;
+      text-shadow: black -0.1em 0.1em 0.2em;
+      padding-top: 85px;
+    }
+
+    .faq .heading h1{
+      font-size: 35pt;
+      font-weight: bold;
+    }
+
+    .faq .row{
+      margin-left: 18vw;
+      margin-right: 18vw;
+      background:  #72D7D0;
+      text-align: left;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .faq .row h2{
+      font-size: 14pt;
+      padding-bottom: 8px;
+    }
+    .faq .row p {
+      font-size: 10pt;
+      font-weight: thin;
+    }
+
+     @media only screen and (max-width: 800px) {
+      .faq .row{
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+    }
+
+    .register{
+      background: #FFE86B;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .register .row{
+      background: #C9D41B;
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .register .row .content h1{
+      color: #FFFFFF;
+      text-shadow: black -0.05em 0.07em 0.1em;
+      font-size: 35pt;
+      font-weight: bold;
+    }
+
+    .prize {
+      background: #FFBC29;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .prize .heading{
+      color: #FFFFFF;
+      text-shadow: black -0.1em 0.1em 0.2em;
+      padding-top: 85px;
+    }
+
+    .prize .heading h1{
+      font-size: 35pt;
+      font-weight: bold;
+    }
+
+    .prize .row{
+      margin-left: 14vw;
+      margin-right: 14vw;
+      background:  #FFCA57;
+      text-align: left;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .prize .row img{
+      width: 100%;
+      height: auto;
+    }
+
+    .ending{
+      background: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .ending .row{
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .ending .row .content img{
+      width: 200px;
+      height: auto;
+    }
+    .footer{
+      padding: 0px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .footer .content{
+      height: 50px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a id="goToAbout" href="#" class="item">About</a></li>
+        <li><a id="goToFAQ" href="#" class="item">FAQ</a></li>
+        <li><a id="goToRegister" href="#" class="item">Register</a></li>
+        <li><a id="goToPrizes" href="#" class="item">Prizes</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container-fluid text-center custom-container">
+      <div class="row">
+        <div id="leftcol" class="col-md-6">
+          <h1 style="color: #e74c3c"> S </h1>
+          <h1 style="color: #1abc9c"> I </h1>
+          <h1 style="color: #f1c40f"> M </h1>
+          <h1> H A C K </h1>
+          <h2> DECEMBER 3-4 // 2016 </h2>
+        </div>
+        <div id="rightcol" class="col-md-6">
+          <img id ="duck" src="pics/duck.png">
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-3 text-center placeholder"></div>
+
+<div id="aboutDiv" class="container-fluid bg-3 text-center about">
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-3 heading">
+      <h1>WHAT IS<br>SIMHACK?</h1>
+    </div>
+    <div class="col-sm-4 content">
+      <p>SimHack is Simmons Hall's headline hackathon, with over 300 possible undergraduate attendees from around the institute. A 24-hour period from December 3rd to 4th, hackers collaborate and experiment on software and maybe some hardware projects. This is the weekend to meet other enthusiastic hackers, push your boundaries, and realize the projects of your dreams!</p>
+    </div>
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
+  
+<div id="FAQDiv" class="container-fluid bg-3 text-center faq">
+  <div class="heading">
+    <h1>FREQUENTLY ASKED QUESTIONS</h1>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Can I attend?</h2>
+      <p>IF (you are a Simmons Resident) OR (you are a decent person) OR (you bring us cupcakes) AND (you are at least 18 years old)) RETURN “Yes!”</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>How does registration work?</h2>
+      <p>Registration will be opening as soon as we put this site up! Admissions will be based on a nothing, everyone is welcome. If you’re accepted, you’ll promise to attend so we know how much food to order for everyone.</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Does this cost money?</h2>
+      <p>Nope! Admission is free and includes meals, drinks, snacks, overnight hosting, workshops, swag, and a memorable experience (if we do say so ourselves)!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>What will I eat?</h2>
+      <p>There's dining... JK We’ll provide food for all meals from Saturday’s breakfast to Sunday’s lunch. If you have dietary restrictions, we’ll try our best to accommodate them. Of course, we’ll also have an abundance of snacks throughout the hacking period.</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Where will I sleep?</h2>
+      <p>Hacking all night is fun, but you can also get some rest when you need it! Preferably in your room, but you can also sleep in ours if you would like, we have extra space for a sleepover. 😴😴😴</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>How do I get there?</h2>
+      <p>Go to any elevator, press (1). Walk to MPR. Alternatively, you can also walk down to the MPR through any of our wacky and wonderful stairs.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>What should I bring?</h2>
+      <p>Bring a valid student ID and laptop for hacking. We’ll provide pretty much everything else — food and breathing air! If you like to be comfy, you can bring a blanket, pillow, and towel.</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>How do teams work?</h2>
+      <p>Teams are at most 3 people. You can select teammates when you register, or you can register individually without specified teammates. Rest assured you’ll be able to hack with your friends if that’s what you prefer!</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>What if I don’t have a team?</h2>
+      <p>If you don’t have a team now, that’s okay! If you prefer to work by yourself, that's fine too. If you prefer a team, we can help you find a tea. EZPZ</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Is this really happening?</h2>
+      <p>You bet! Sorry we've been a little busy in setting this up, but it should definitely be fun! Come join us.</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Is there an admissions puzzle again?</h2>
+      <p>Yes, please solve the puzzle <a style="color: #e74c3c" href="http://www.websudoku.com/">here</a>. You'll get extra things of wonderful nature.</p>
+    </div>
+    <div class="col-sm-4">
+      <h2>What if this FAQ didn’t answer my questions?</h2>
+      <p>Please email us at <a style="color: #e74c3c" href="mailto:simmons-tech@mit.edu?Subject=Help%20Me" target="_top">simmons-tech@mit.edu</a> if you’re in any way confused or concerned! We’d love to help you out :)</p>
+    </div>
+  </div>
+  <br><br><br><br><br>
+</div>
+
+<div id="registerDiv" class="container-fluid bg-3 text-center register">
+  <div class="row">
+    <div class="col-sm-12 content">
+      <h1>REGISTER</h1>
+      <p>If you plan to attend, please help us out by filling out <a href="https://goo.gl/forms/C9JDpYpFX4SJIz6q2">this Google form</a>. We even provided a nice QR code for you.</p>
+      <img src="pics/qr.png">
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
+
+  
+<div id="prizeDiv" class="container-fluid bg-3 text-center prize">
+  <div class="heading">
+    <h1>PRIZES</h1>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="pics/first.jpg">
+    </div>
+    <div class="col-sm-6">
+      <img src="pics/second.jpg">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="pics/third.jpg">
+    </div>
+    <div class="col-sm-6">
+      <img src="pics/fourth.jpg">
+    </div>
+  </div>
+  <br><br><br><br><br>
+</div>
+
+<div class="container-fluid bg-3 text-center ending">
+  <div style="margin-top: 70px" class="row">
+    <div class="col-sm-6 content">
+      <img src="pics/duck.png">
+    </div>
+    <div class="col-sm-6 content">
+      <img src="pics/simmons.png">
+    </div>
+  </div>
+  <div class="row">
+    <div style="margin-bottom: 40px" class="col-sm-12 content">
+      <h1> S I M H A C K </h1>
+      <p> DECEMBER 3-4 // 2016 </p>
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center footer">
+  <div class="row">
+    <div style = "background: #FC5454;" class="col-sm-2 content"></div>
+    <div style = "background: #4ECDC4;" class="col-sm-2 content"></div>
+    <div style = "background: #FFE86B; padding-top: 13px; " class="col-sm-4 content">*Template inspired by HackMIT</div>
+    <div style = "background: #C9D41B;" class="col-sm-2 content"></div>
+    <div style = "background: #FFBC29;" class="col-sm-2 content"></div>
+  </div>
+</footer>
+
+</body>
+</html>
+
